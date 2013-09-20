@@ -1,7 +1,16 @@
+enable :sessions
+
 get '/' do
   # Look in app/views/index.erb
-  
-  erb :index
+  if user_logged_in?
+    # set some session data
+    # load in games, etc
+    erb :index
+  else
+    erb :signup
+  end
+
+
 end
 
 
