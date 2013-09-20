@@ -1,3 +1,6 @@
 class Response < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :card
+  belongs_to :game
+  has_one :user, through => :games 
+  has_one :deck, through => :games
 end
