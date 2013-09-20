@@ -4,7 +4,8 @@ class SeedDB
     num.times do
       user = User.new( name: Faker::Name.name,
                        email: Faker::Internet.email,
-                       password: Faker::Base.regexify(/[a-zA-Z0-60]{9}/) )
+                       password: "test", #Faker::Base.regexify(/[a-zA-Z0-60]{9}/) )
+                       password_confirmation: "test")
       user.save
     end
   end
