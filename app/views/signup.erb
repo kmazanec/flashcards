@@ -5,7 +5,7 @@
     <h4><%= @message %></h4>
   <% end %>
 
-  <form action="/signup" method="user">
+  <form action="/signup" method="POST">
     <div class="field">
       <label for="name">Name: </label>
       <input id="name" type="text" name="user[name]" value="<%= @user.try(:name)%>">
@@ -15,12 +15,12 @@
       <input id="email" type="text" name="user[email]" value="<%= @user.try(:email)%>">
     </div>
     <div class="field">
-      <label for="password1">Password: </label>
-      <input id="password1" type="password" name="password1">
+      <label for="password">Password: </label>
+      <input id="password" type="password" name="password">
     </div>
     <div class="field">
-      <label for="password2">Repeat password: </label>
-      <input id="password2" type="password" name="password2">
+      <label for="password_confirmation">Repeat password: </label>
+      <input id="password_confirmation" type="password" name="password_confirmation">
     </div>
     <div class="field">
       <input type="submit">
