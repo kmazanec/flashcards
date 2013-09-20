@@ -18,6 +18,14 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+
+  <div id="header" class="header">
+    <%= erb :_header %>
+  </div>
+
+  <div id="content" class="content">
+    <%= yield %>
+  </div>
+
 </body>
 </html>
