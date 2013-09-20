@@ -1,3 +1,20 @@
 <div class="container">
-  <%= erb :_card, layout: false %>
+
+  <div class="status-bar">
+    <!-- insert partial header erb -->
+    <h4>This be Eigil's header, yarrrr!</h4>
+  </div>
+
+    <div class="partial_container">
+        <!-- <p>Partial content goes here</p> -->
+
+        <%= erb :_home, layout: false %>
+
+        
+    </div>
+  
+
+  <div class="footer">
+    <p>This be the footer!</p>
+  </div>
 </div>
