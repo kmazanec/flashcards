@@ -10,7 +10,7 @@ get '/deck/:deck_id' do
   # or the question the user was last on
 end
 
-get '/deck/:deck_id/:question_id' do
+get '/deck/:deck_id/:card_id' do
   # send the user to the given question, pull the data from the databse and send to the view
 
 
@@ -18,7 +18,7 @@ end
 
 # POST ===================================
 
-post '/deck/:deck_id/:question_id' do
+post '/deck/:deck_id/:card_id' do
   # when the user answers the question
   # check if the answer is correct
   #   IF correct, send the user to the next question and set the message to 'correct'
