@@ -1,20 +1,22 @@
-<div class="container">
-
-  <div class="status-bar">
-    <!-- insert partial header erb -->
-    <h4>This be Eigil's header, yarrrr!</h4>
+<div class="header">
+    <p>Let's Play!</p>
   </div>
 
-    <div class="partial_container">
-        <!-- <p>Partial content goes here</p> -->
-
-        <%= erb :_home, layout: false %>
-
-        
-    </div>
-  
-
-  <div class="footer">
-    <p>This be the footer!</p>
+  <div class="resume">
+  <!-- resume button / css attirbute active or hidden -->
+    <p>Resume</p>
+    <!-- conditional button with hyperlink to game in progress  -->
   </div>
-</div>
+
+  <div class="stats">
+    <p>Deck stats</p>
+    <!-- erb _deck_stats -->
+  </div>
+
+  <div class="decks">
+    <p>Choose Your Deck!</p>
+    <a href="/deck1"><img id="deck1" src="css/world_caps.jpg"></a>
+    <a href="/deck2"><img id="deck2" src="css/americana.jpg"></a>
+    <!-- Capital cities of the world 
+    US Quiz  -->
+  </div>
