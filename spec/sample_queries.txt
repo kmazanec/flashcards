@@ -1,0 +1,32 @@
+
+# Give me the user's current question
+
+User.games.where(complete = false).each do |game|
+  game.current_question
+end
+
+# Give me the number of correct and incorrect answers for a given card
+
+Response.correct_answers_count(Card(id))
+
+Response.correct_answers_count (card_id)
+  Response.where(given_card_id == card_id, correct == true).count
+end
+
+
+# Number of games a user has finished
+
+Game.where(user_id == User(id), complete? true )
+
+
+# NUmber of cards in a deck
+
+Deck(id).cards.count
+
+# Number of attempts by a user on a given card
+
+User.responses.find_by_correct(true).count
+
+Card.responses.each do |response|
+  response.game.find_by_user_id(user_id)
+end
