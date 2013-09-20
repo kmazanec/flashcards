@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/header.css">
+
+<div class="logo">
+  <a href='/'>Flash Cards</a>
+</div>
+
+<% if logged_in? %>
+  <div class="form">
+    <form action="/logout" method="POST">
+      <div><a class="link" href="/user"><%=  %></a></div>
+      <div><input class="submit" type="submit" value="Log out"></div>
+    </form>
+  </div>
+<% else %>
+
+<div class="form">
+  <form action="/login" method="POST">
+    <div>
+      <input id="f-email" class="field" type="text" id="email" value="email" name="user[email]">
+    </div>
+
+    <div>
+      <input id="f-password" class="field" type="text" id="password" value="password" name="user[password]">
+    </div>
+
+    <div><input class="submit" type="submit" value="Log in"></div>
+  
+  </form>
+</div>
+<% end %>
