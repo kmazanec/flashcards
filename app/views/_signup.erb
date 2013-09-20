@@ -1,0 +1,30 @@
+<div class="signup_container">
+  <h3>Signup for flashcards!</h3>
+  <% if @message %>
+  <!-- message if the user already exists or password doesn't match -->
+    <h4><%= @message %></h4>
+  <% end %>
+
+  <form action="/signup" method="user">
+    <div class="field">
+      <label for="name">Name: </label>
+      <input id="name" type="text" name="user[name]" value="<%= @user.try(:name)%>">
+    </div>
+    <div class="field">
+      <label for="email">Email: </label>
+      <input id="email" type="text" name="user[email]" value="<%= @user.try(:email)%>">
+    </div>
+    <div class="field">
+      <label for="password1">Password: </label>
+      <input id="password1" type="password" name="password1">
+    </div>
+    <div class="field">
+      <label for="password2">Repeat password: </label>
+      <input id="password2" type="password" name="password2">
+    </div>
+    <div class="field">
+      <input type="submit">
+    </div>
+  </form>
+  
+</div>

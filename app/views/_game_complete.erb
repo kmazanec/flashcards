@@ -1,0 +1,12 @@
+<div class="game_complete">
+  <h3>Deck Complete!</h3>
+  <div>
+    <img src="">
+  </div>
+  <form action="/" method="get">
+    <input type="submit" value="Back to Home">
+  </form>
+  <form action="/deck/<%= @game.deck.id %>">
+    <input type="submit" value="Replay this game">
+  </form>
+</div>

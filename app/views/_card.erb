@@ -1,0 +1,10 @@
+<div class="card_container">
+  <div class="card">
+    <h3><%= @card.question %></h3>
+    <form action="/deck/<%= @card.deck_id %>/<%= @card.id %>" method="post">
+      <label for="guess">Guess: </label>
+      <input id="guess" type="text" name="guess">
+      <input type="submit" value="Did I get it right?">
+    </form>
+  </div>
+</div>
