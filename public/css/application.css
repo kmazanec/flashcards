@@ -7,3 +7,21 @@
 th {
   text-align: left;
 }
+
+.header {
+
+}
+
+.resume {
+  border: 1px solid tomato;
+
+}
+
+.stats {
+  border: 1px solid yellow;
+  
+}
+
+.decks {
+  border: 1px solid teal;
+}
