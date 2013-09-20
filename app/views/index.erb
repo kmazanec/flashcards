@@ -1,22 +1,20 @@
 <div class="container">
-  <div class="header">
+  <div class="status-bar">
     <!-- insert partial header erb -->
-    <h1>This be the header, yarrrr!</h1>
+    <h4>This be Eigil's header, yarrrr!</h4>
   </div>
 
-  <div class="resume">
-  <!-- resume button / css attirbute active or hidden -->
-    <p>Resume</p>
+    <div class="partial_container">
+        <!-- <p>Partial content goes here</p> -->
+
+        <%= erb :_home, layout: false %>
+
+        
+    </div>
+  
+
+  <div class="footer">
+    <p>This be the footer!</p>
   </div>
-
-  <div class="stats">
-    <p>Stats here</p>
-  </div>
-
-  <div class="decks">
-    <p>Deck selection here</p>
-  </div>
-
-
 
 </div>

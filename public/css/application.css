@@ -1,15 +1,26 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 100%;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  max-width: 50%;
+  height: auto;
+
 }
 th {
   text-align: left;
 }
 
-.header {
+.status-bar {
+  padding-bottom: 2px;
+  background-color: #f5c2e6;
 
+}
+
+.header {
+  text-align: center;
+  text-style: bold;
+  border: 1px dotted aqua;
 }
 
 .resume {
@@ -19,9 +30,27 @@ th {
 
 .stats {
   border: 1px solid yellow;
-  
+
 }
 
 .decks {
   border: 1px solid teal;
 }
+
+#deck1, #deck2 {
+  border-radius: 20px;
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+  text-align: auto;
+}
+
+.footer { 
+  text-align: bottom;
+}
+
+.partial_container {
+  border: 1px dotted black;
+  height: 500px;
+}
+
