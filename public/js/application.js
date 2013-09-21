@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $('#f-email').focus(function(event){
     $(this).animate({width: "170px"});
-    $(this).css("background-color","#bbb");
+    // $(this).css("background-color","#bbb");
     if ( $(this).val() == "email" ) {
       $(this).val("");
     };
@@ -13,13 +13,13 @@ $(document).ready(function() {
       {
         $(this).val("email");
         $(this).animate({width: "100px"});
-        $(this).css("background-color","#999");
+        // $(this).css("background-color","#999");
       };
   });
 
   $('#f-password').focus(function(event){
     $(this).animate({width: "140px"});
-    $(this).css("background-color","#bbb");
+    // $(this).css("background-color","#bbb");
     $(this).attr("type","password")
     if ( $(this).val() == "password" ) {
       $(this).val("");
@@ -32,10 +32,23 @@ $(document).ready(function() {
         $(this).animate({width: "100px"});
         $(this).val("password");
         $(this).attr("type","pssword");
-        $(this).css("background-color","#999");
+        // $(this).css("background-color","#999");
       };
   });
 
+
+  $(window).scroll(function(){
+        var scrollTop = 90;
+        if($(window).scrollTop() >= scrollTop){
+            $('.header').css({
+                position : 'fixed',
+                top : '0'
+            });
+        }
+        if($(window).scrollTop() < scrollTop){
+            $('.header').removeAttr('style');  
+        }
+    })
 
 
 });

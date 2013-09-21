@@ -2,6 +2,10 @@
   <h1>Let's Play!</h1>
 </div>
 
+
+
+<div class="three_fourth">
+
 <% if @game %>
 <div class="resume">
 <!-- resume button / css attirbute active or hidden -->
@@ -9,8 +13,6 @@
   <!-- conditional button with hyperlink to game in progress  -->
 </div>
 <% end %>
-
-<div class="three_fourth">
 
 <div class="stats">
   <p>Deck stats</p>
@@ -21,11 +23,25 @@
   <p>Choose Your Deck!</p>
   <% @decks = Deck.all %>
   <% @decks.all.each do |deck| %>
-    <div>
-      <h3><%= deck.title %></h3>
-      <a href="/deck/<%= deck.id %>"><img id="deck<%=deck.id%>" src="css/world_caps.jpg"></a>
-      <p>Number of cards: <%= deck.cards.count %></p>
-      <p>Number of attempts: <%= deck.games.count %></p>
+    <div class="deck">
+       <div>
+        <a href="/deck/<%= deck.id %>"><img id="deck" src="css/world_caps.jpg"></a>
+      </div>
+      <div class="title">
+        <%= deck.title %>
+      </div>
+      <div class="card_count">
+        <%= icon('stack') %>
+        <span><%= deck.cards.count %></span>
+      </div>
+     
+
+      
+      
+
+<!--       <p>Number of cards: <%= deck.cards.count %></p>
+      <p>Number of attempts: <%= deck.games.count %></p> -->
+
     </div>
   <% end %>
 </div>
@@ -36,7 +52,3 @@
   <span><%= erb :'icons/bars' %> User stats</span>
   <p>Hey</p>
 </div>
-
-<h3>Hey</h3>
-
-<%= icon('alarm') %>
