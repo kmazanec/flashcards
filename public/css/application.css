@@ -4,6 +4,11 @@ body {
   background-color: #eee;
 }
 
+svg {
+  width: 50px;
+  height: 50px;
+}
+
 /* CSS Columns ************************/
 
 .float_right {
@@ -36,30 +41,15 @@ span {
   font-size: 2em;
 }
 
-.header svg {
-  fill: #fff;
-  width: 20px;
-  height: 20px;
-  right:40px;
-  display: inline-table;
-}
-
-
-svg {
-  width: 35px;
-  height: 35px;
-  fill: #333;
-}
-
-svg:hover {
-  fill: red;
+.content {
+  margin: 0 20px;
 }
 
 
 /* CSS Header *************************/
 
 .header {
-  background-color: #333;
+  background-color: #2A4A60;
   min-height: 50px;
   width: 100%;
   display: inline-block;
@@ -109,16 +99,38 @@ svg:hover {
 .header .form .field input {
   width: 100px;
   margin-left: 5px;
-  background: url(/images/icons/envelop.svg);
-  background-size: 15px 15px;
-  background-repeat: no-repeat;
-  background-position: 3px 6px;
-  background-color: #999;
+  background-color: #C2DDF0;
 }
 
 .header .form .button input {
   margin-left: 5px;
 }
+
+.header .form .icon {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  padding-top: 20px;
+}
+.header .form .icon svg {
+    fill: #C2DDF0;
+    margin-right: -8px;
+    margin-left: 10px;
+    margin-bottom: -5px;
+    height: 20px;
+    width: 20px;
+  }
+
+.header .form .button .icon svg {
+  fill: #C2DDF0;
+} 
+
+.header .form .button .icon svg:hover {
+  transition-property: fill;
+  transition-duration: 3s;
+  fill: #fff;
+
+} 
 
 /* CSS Form ***************************/
 
@@ -131,15 +143,17 @@ svg:hover {
   width: 250px;
   text-align: center;
   background-color: #ddd;
-  border: solid 1px #bbb;
-  color: #222;
+  border: solid 1px #145E93;
+  color: #2A4A60;
 }
 
 .form .button input {
   font-weight: bold;
-  color: #0A4D3E;
-  background-color: #A7D1C8;
-  border: solid 1px #bbb;
+  color: #fff;
+  /*background-color: #A7D1C8;*/
+  /*border: solid 1px #bbb;*/
+  background: none;
+  border: none;
   height: 28px;
 }
 
@@ -167,20 +181,58 @@ svg:hover {
 
 }
 
-/*CSS Unsorted*/
 
 
-.content {
-  margin: 0 20px;
+/* CSS Deck **************************/
+
+
+.content .deck {
+  width: 350px;
+  height: 150px;
+  display: inline-table;
+  background-color: #C2DDF0;
+  box-shadow: 0px 0px 20px #aaa;
+  margin-right: 20px;
+  border-radius: 10px;
+/*  border: 3px solid #2A475C;*/
+  transition: box-shadow 0.2s ease-out;
 }
 
-.status-bar {
+.content .deck:hover {
+  box-shadow: 0px 0px 10px #2A475C;
+}
+
+.content .deck img {
+  width: 150px;
+  height: 150px;
+  float: right;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.content .deck .title {
+  font-family: "Helvetica Neue";  
+  /*font-weight: lighter;*/
+  text-transform: uppercase;
+  text-align: center;
+  width: 200px;
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #2A475C;
+}
+
+
+
+
+/*CSS Unsorted*/
+
+/*.status-bar {
   padding-bottom: 2px;
   background-color: #f5c2e6;
 
-}
+}*/
 
-.resume {
+/*.resume {
   border: 1px solid tomato;
 
 }
@@ -193,14 +245,14 @@ svg:hover {
 .decks {
   border: 1px solid teal;
 }
-
-#deck1, #deck2 {
+*/
+/*#deck1, #deck2 {
   border-radius: 20px;
   border: 1px solid black;
   height: 200px;
   width: 200px;
   text-align: auto;
-}
+}*/
 
 .footer { 
   text-align: bottom;

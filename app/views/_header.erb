@@ -8,7 +8,9 @@
       <div class="user"><a class="link" href="/user"><%= current_user.name %></a></div>
       <div class="button">
         <a href="/logout">
+          <div class="icon">
           <%= icon('exit') %>
+        </div>
         </a>
         <!-- <input type="submit" value="Log out"> -->
       </div>
@@ -18,11 +20,15 @@
 
 <div class="form">
   <form action="/login" method="POST">
+    <div class="icon"><%= icon('envelop') %></div>
     <div class="field">
+      
       <input id="f-email" type="text" id="email" value="email" name="user[email]">
     </div>
-
+    <div class="icon"><%= icon('key') %></div>
     <div class="field">
+      
+      
       <input class="password" id="f-password" type="text" id="password" value="password" name="user[password]">
     </div>
 
@@ -33,3 +39,6 @@
   </form>
 </div>
 <% end %>
+
+
+         
