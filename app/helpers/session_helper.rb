@@ -28,7 +28,8 @@ helpers do
   end
 
   def next_game_card_id
-    current_game.cards[current_game.cards.index(current_game_card)+1].id
+    temp_card = current_game.cards[current_game.cards.index(current_game_card)+1]
+    temp_card ? temp_card.id : nil
   end
 
 

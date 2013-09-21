@@ -14,6 +14,10 @@ get '/' do
   end
 end
 
+get '/game_complete' do
+  erb :game_complete
+end
+
 
 get '/deck/:deck_id' do
   # this will load the correct deck and then route to the first question
