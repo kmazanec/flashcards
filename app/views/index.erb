@@ -1,5 +1,5 @@
 <div>
-  <h1>Let's Play!</h1>
+  <h2>Choose your Deck!</h2>
 </div>
 
 
@@ -9,18 +9,18 @@
 <% if @game %>
 <div class="resume">
 <!-- resume button / css attirbute active or hidden -->
-  <p><a href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">Resume</a></p>
+  <p><a href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">Resume Game</a></p>
   <!-- conditional button with hyperlink to game in progress  -->
 </div>
 <% end %>
 
-<div class="stats">
+<!-- <div class="stats">
   <p>Deck stats</p>
   <!-- erb _deck_stats -->
-</div>
+<!-- </div>  -->
 
 <div class="decks">
-  <p>Choose Your Deck!</p>
+<!--   <p>Choose Your Deck!</p> -->
   <% @decks = Deck.all %>
   <% @decks.all.each do |deck| %>
     <div class="deck">
@@ -50,5 +50,9 @@
 
 <div class="one_fourth float_right">
   <span><%= erb :'icons/bars' %> User stats</span>
-  <p>Hey</p>
+  <ul>
+    <li>Players Total:<%= User.all.count %></li>
+    <li>Current Game Start Time: <%= @current_game[:start_time] %></li>
+  </ul>
+  <p>
 </div>
