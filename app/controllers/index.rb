@@ -63,18 +63,5 @@ post '/deck/:deck_id/:card_id' do
   # ALSO update the user's current session info (stats, etc)
 end
 
-post '/login' do
-
-
-  erb :index
-end
-
-post '/signup' do
-
-
-  erb :index
-
-end
-
 
 
