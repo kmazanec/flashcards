@@ -15,10 +15,7 @@ get '/' do
 end
 
 get '/game_complete' do
-    # p current_deck.cards.last.id 
-    # if @game.current_card = current_deck.cards.last.id
-    #     @game.save
-    # end
+    @last_deck_id = params[:last_deck_id]
     erb :game_complete
 end
 
@@ -30,6 +27,7 @@ get '/deck/:deck_id' do
   if load_existing_game_on_this_deck(params[:deck_id])
     session[:game_id] = @existing_game.id
     session[:card_id] = @existing_game.current_card
+    session[:last_guess_correct] = nil
 
     redirect to("/deck/#{params[:deck_id]}/#{@existing_game.current_card}")
  
@@ -48,6 +46,7 @@ get '/deck/:deck_id' do
 
     session[:game_id] = @game.id
     session[:card_id] = @game.current_card
+    session[:last_guess_correct] = nil
 
     redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
   end
@@ -78,11 +77,12 @@ post '/deck/:deck_id/:card_id' do
     current_game.update(current_card: session[:card_id])
 
     if session[:card_id].nil?
+      current_game.update(complete: true)
+      completed_deck_id = current_game.deck.id
       session[:game_id] = nil
       session[:last_guess_correct] = nil
-      current_game.update(complete: true)
 
-      redirect to("/game_complete")
+      redirect to("/game_complete?last_deck_id=#{completed_deck_id}")
     else
       redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
     end
