@@ -10,18 +10,21 @@
 </div>
 <% end %>
 
-<div class="stats">
+<div class="stats 3_4">
   <p>Deck stats</p>
   <!-- erb _deck_stats -->
 </div>
 
-<div class="decks">
+<div class="decks 3_4">
   <p>Choose Your Deck!</p>
   <% @decks = Deck.all %>
   <% @decks.all.each do |deck| %>
+    <div>
     <h3><%= deck.title %></h3>
     <a href="/deck/<%= deck.id %>"><img id="deck<%=deck.id%>" src="css/world_caps.jpg"></a>
     <p>Number of cards: <%= deck.cards.count %></p>
     <p>Number of attempts: <%= deck.games.count %></p>
   <% end %>
 </div>
+
+<div class="1_4"></div>
