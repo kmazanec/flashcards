@@ -25,7 +25,7 @@
   <% @decks.all.each do |deck| %>
     <div class="deck">
        <div>
-        <a href="/deck/<%= deck.id %>"><img id="deck" src="css/world_caps.jpg"></a>
+        <a href="/deck/<%= deck.id %>"><img id="deck" src="<%= deck.image_url %>"></a>
       </div>
       <div class="title">
         <%= deck.title %>
@@ -52,7 +52,7 @@
   <span><%= erb :'icons/bars' %> User stats</span>
   <ul>
     <li>Players Total:<%= User.all.count %></li>
-    <li>Current Game Start Time: <%= @current_game[:start_time] %></li>
+
   </ul>
   <p>
 </div>
