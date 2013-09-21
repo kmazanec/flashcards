@@ -51,8 +51,10 @@
 <div class="one_fourth float_right">
   <span><%= erb :'icons/bars' %> User stats</span>
   <ul>
-    <li>Players Total:<%= User.all.count %></li>
-
+    <li>Players Total: <%= total_number_players %></li>
+    <li>Games Played: <%= total_games_played %></li>
+    <li>Correct Responses: <%= @user.number_of_correct_guesses %></li>
+    <li>Incorrect Responses: <%= @user.number_of_incorrect_guesses %></li> 
   </ul>
   <p>
 </div>
