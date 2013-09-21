@@ -6,15 +6,54 @@ body {
 
 /* CSS Columns ************************/
 
-.1_4 {
+.float_right {
+  float: right;
+}
 
+.float_left {
+  float: left;
+}
+
+.one_fourth {
+  background-color: #ccc;
+  width: 24%;
+  display: inline-table;
+  padding: 10px;
+  box-sizing: border-box; 
 }
 
 
-.3_4 {
-
+.three_fourth {
+  width: 72%;
+  display: inline-table;
 }
 
+img .logo {
+  fill: #117645;
+}
+
+span {
+  font-size: 2em;
+}
+
+.header svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+  right:40px;
+  display: inline-table;
+}
+
+
+svg {
+  width: 35px;
+  height: 35px;
+  fill: #333;
+}
+
+svg:hover {
+  fill: red;
+}
 
 
 /* CSS Header *************************/
@@ -27,7 +66,7 @@ body {
 }
 
 .header div {
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .header .logo, .header .form {
@@ -70,6 +109,10 @@ body {
 .header .form .field input {
   width: 100px;
   margin-left: 5px;
+  background: url(/images/icons/envelop.svg);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: 3px 6px;
   background-color: #999;
 }
 
@@ -128,7 +171,7 @@ body {
 
 
 .content {
-  margin: 0 30px;
+  margin: 0 20px;
 }
 
 .status-bar {
