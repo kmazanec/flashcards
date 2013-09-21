@@ -70,6 +70,7 @@ post '/deck/:deck_id/:card_id' do
 
   if new_response.correct
     session[:card_id] = next_game_card_id
+    current_game.current_card = session[:card_id]
     session[:error] = nil
 
     if session[:card_id].nil?

@@ -5,7 +5,7 @@
 <% if @game %>
 <div class="resume">
 <!-- resume button / css attirbute active or hidden -->
-  <p><a href="/deck/<%= @game.deck_id %>/<%= @game.current_card %>">Resume</a></p>
+  <p><a href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">Resume</a></p>
   <!-- conditional button with hyperlink to game in progress  -->
 </div>
 <% end %>
