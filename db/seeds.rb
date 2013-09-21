@@ -10,8 +10,9 @@ class SeedDB
     end
   end
 
-  def self.create_deck(deck_title, cards)
+  def self.create_deck(deck_title, deck_url, cards)
     deck = Deck.new( title: deck_title,
+                     url: deck_url,
                      active: true )
 
     deck.save
@@ -65,7 +66,7 @@ cards = [ {q: "What's the capital of Norway?", a: "Oslo" },
           {q: "What's the capital of England?", a: "London"},
           {q: "What's the capital of Iceland?", a: "Reykjavik"} ]
 
-SeedDB.create_deck("Capitol cities of the world", cards)
+SeedDB.create_deck("Capitol cities of the world", "/public/images/"cards)
 
 cards2 = [ {q: "What's the largest state in the US by land area?", a: "Alaska" },
            {q: "What's the largest state in the US by population?", a: "California"},
