@@ -37,6 +37,27 @@ $(document).ready(function() {
   });
 
 
+// on pressing register button:
+  $('.signup form').submit(function(event){
+    event.preventDefault();
+    var user_input = $('.signup form').serialize();
+    $.post('/signup', user_input, function(response){ 
+      alert(response);
+      // if (response = "success")
+      // {
+      //   alert(response);
+      //   redirect "/";  
+      // else 
+      //   alert(response);
+      //   window.location.href = '/';
+      // }
+    });
+  });
+  
+
+
+
+
   $(window).scroll(function(){
         var scrollTop = 90;
         if($(window).scrollTop() >= scrollTop){
