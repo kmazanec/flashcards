@@ -2,9 +2,9 @@ enable :sessions
 
 get '/' do
   # Look in app/views/index.erb
-  session[:user_id] = 1
+  # session[:user_id] = 1
 
-  if true #logged_in?
+  if logged_in?
     @user = current_user
     @game = current_game
     @decks = Deck.all
@@ -12,6 +12,10 @@ get '/' do
   else
     erb :signup
   end
+end
+
+get '/game_complete' do
+  erb :game_complete
 end
 
 
@@ -61,6 +65,30 @@ post '/deck/:deck_id/:card_id' do
   #   IF correct, send the user to the next question and set the message to 'correct'
   #   NOT correct, send the user back to the same question with the wrong answer field and next question button
   # ALSO update the user's current session info (stats, etc)
+  new_response = Response.create(guess: params[:guess])
+  new_response.game = current_game
+  new_response.card = current_game_card
+  new_response.correct = ( new_response.guess == new_response.card.answer )
+
+  new_response.save
+
+  if new_response.correct
+    session[:card_id] = next_game_card_id
+    current_game.current_card = session[:card_id]
+    session[:error] = nil
+
+    if session[:card_id].nil?
+      redirect to("/game_complete")
+    else
+      redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
+    end
+  else
+    session[:error] = "WRONG ANSWER"
+
+    redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
+  end
+
+
 end
 
 
