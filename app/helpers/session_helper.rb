@@ -27,6 +27,10 @@ helpers do
     end
   end
 
+  def next_game_card_id
+    current_game.cards[current_game.cards.index(current_game_card)+1].id
+  end
+
 
 
   
