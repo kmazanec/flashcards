@@ -6,7 +6,7 @@
   <form action="/" method="get">
     <input type="submit" value="Back to Home">
   </form>
-  <form action="/deck/<%= @game.deck.id %>">
+  <form action="/deck/<%= current_game.deck.id %>">
     <input type="submit" value="Replay this game">
   </form>
 </div>
