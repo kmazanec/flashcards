@@ -1,0 +1,73 @@
+body {
+  background-color: #eee;
+}
+
+.header {
+  background-color: #333;
+  height: 50px;
+  width: 100%;
+}
+
+.header div {
+  padding: 0 30px;
+}
+
+.header .logo, .header .form {
+  display: inline-block;
+  position: relative;
+}
+
+.header .logo {
+  float: left;
+  padding-top: 7px;
+  height: 43px;
+}
+
+.header .form {
+  float: right;
+}
+
+.header .logo a{
+  color: #fff;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header .form div {
+  display: inline;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.header .form form {
+  padding: 12px 0;
+  font-size: 0.9em;
+}
+
+.header .form input.field {
+  height: 25px;
+  width: 100px;
+  text-align: center;
+  margin-left: 5px;
+  background-color: #999;
+  border: solid 1px #bbb;
+  color: #222;
+}
+
+.header .form input.submit {
+  height: 28px;
+  margin-left: 5px;
+  background-color: #A7D1C8;
+  border: none;
+
+  font-weight: bold;
+  color: #0A4D3E;
+}
+
+.header .form a {
+  color: #ddd;
+  font-size: 1em;
+  margin: 0px 10px 0px 140px;
+  padding-top:40px;
+  padding-bottom: 0;
+}
