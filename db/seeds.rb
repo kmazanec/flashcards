@@ -63,12 +63,12 @@ cards = [ {q: "What's the capital of Norway?", a: "Oslo" },
           {q: "What's the capital of Sweden?", a: "Stockholm"},
           {q: "What's the capital of Denmark?", a: "Copenhagen"},
           {q: "What's the capital of England?", a: "London"},
-          {q: "What's the capital of Iceland?", a: "Reykavik"} ]
+          {q: "What's the capital of Iceland?", a: "Reykjavik"} ]
 
 SeedDB.create_deck("Capitol cities of the world", cards)
 
 cards2 = [ {q: "What's the largest state in the US by land area?", a: "Alaska" },
-           {q: "What's the largest state in the US by population?", a: "Califorina"},
+           {q: "What's the largest state in the US by population?", a: "California"},
            {q: "What's the smallest state in the US by land area?", a: "Rhode Island"},
            {q: "What's the smalles state in the US by population?", a: "Wyoming"}]
 
