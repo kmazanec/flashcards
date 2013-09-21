@@ -36,7 +36,7 @@ body {
 .header .form div {
   display: inline;
   padding: 0;
-  margin-left: 5px;
+  /*margin-left: 5px;*/
 }
 
 .header .form form {
@@ -67,7 +67,4 @@ body {
 .header .form a {
   color: #ddd;
   font-size: 1em;
-  margin: 0px 10px 0px 140px;
-  padding-top:40px;
-  padding-bottom: 0;
 }
