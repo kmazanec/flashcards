@@ -2,9 +2,9 @@ enable :sessions
 
 get '/' do
   # Look in app/views/index.erb
-  session[:user_id] = 1
+  # session[:user_id] = 1
 
-  if true #logged_in?
+  if logged_in?
     @user = current_user
     @game = current_game
     @decks = Deck.all
