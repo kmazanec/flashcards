@@ -42,7 +42,13 @@ body {
 .header .form div {
   display: inline;
   padding: 0;
-  /*margin-left: 5px;*/
+  margin-left: 5px;
+}
+
+.header .form a {
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
 }
 
 .header .form form {
@@ -103,6 +109,7 @@ body {
 .signup .button input {
   height: 40px;
   width: 100%;
+
 }
 
 /*CSS Unsorted*/

@@ -5,8 +5,8 @@
 <% if logged_in? %>
   <div class="form">
     <form action="/logout" method="POST">
-      <div><a class="link" href="/user"><%=  %></a></div>
-      <div><input class="submit" type="submit" value="Log out"></div>
+      <div class="user"><a class="link" href="/user"><%= @user.name %></a></div>
+      <div class="button"><input type="submit" value="Log out"></div>
     </form>
   </div>
 <% else %>
