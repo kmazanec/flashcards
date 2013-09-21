@@ -30,13 +30,17 @@
       <div class="title">
         <%= deck.title %>
       </div>
+      <div class="card_count">
+        <%= icon('stack') %>
+        <span><%= deck.cards.count %></span>
+      </div>
      
 
       
       
 
-      <p>Number of cards: <%= deck.cards.count %></p>
-      <p>Number of attempts: <%= deck.games.count %></p>
+<!--       <p>Number of cards: <%= deck.cards.count %></p>
+      <p>Number of attempts: <%= deck.games.count %></p> -->
 
     </div>
   <% end %>
