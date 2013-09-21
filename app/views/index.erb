@@ -10,6 +10,8 @@
 </div>
 <% end %>
 
+<div class="three_fourth">
+
 <div class="stats">
   <p>Deck stats</p>
   <!-- erb _deck_stats -->
@@ -19,9 +21,22 @@
   <p>Choose Your Deck!</p>
   <% @decks = Deck.all %>
   <% @decks.all.each do |deck| %>
-    <h3><%= deck.title %></h3>
-    <a href="/deck/<%= deck.id %>"><img id="deck<%=deck.id%>" src="css/world_caps.jpg"></a>
-    <p>Number of cards: <%= deck.cards.count %></p>
-    <p>Number of attempts: <%= deck.games.count %></p>
+    <div>
+      <h3><%= deck.title %></h3>
+      <a href="/deck/<%= deck.id %>"><img id="deck<%=deck.id%>" src="css/world_caps.jpg"></a>
+      <p>Number of cards: <%= deck.cards.count %></p>
+      <p>Number of attempts: <%= deck.games.count %></p>
+    </div>
   <% end %>
 </div>
+
+</div>
+
+<div class="one_fourth float_right">
+  <span><%= erb :'icons/bars' %> User stats</span>
+  <p>Hey</p>
+</div>
+
+<h3>Hey</h3>
+
+
