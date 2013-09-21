@@ -10,6 +10,7 @@ get '/' do
     @decks = Deck.all
     erb :index
   else
+    session.clear
     erb :signup
   end
 end
