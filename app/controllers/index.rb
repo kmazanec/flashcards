@@ -50,7 +50,7 @@ end
 get '/deck/:deck_id/:card_id' do
   @card = Card.find(params[:card_id])
 
-  erb :game.erb
+  erb :game
 end
 
 # POST ===================================
