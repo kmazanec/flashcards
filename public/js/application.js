@@ -42,15 +42,15 @@ $(document).ready(function() {
     event.preventDefault();
     var user_input = $('.signup form').serialize();
     $.post('/signup', user_input, function(response){ 
-      alert(response);
-      // if (response = "success")
-      // {
-      //   alert(response);
-      //   redirect "/";  
-      // else 
-      //   alert(response);
-      //   window.location.href = '/';
-      // }
+      if (response == "success")
+      {
+        alert(response);
+        window.location.href = '/'; 
+      }
+      else {
+        alert(response);
+        
+      }
     });
   });
   
