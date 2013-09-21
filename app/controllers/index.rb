@@ -47,7 +47,7 @@ get '/deck/:deck_id' do
     session[:game_id] = @game.id
     session[:card_id] = @game.current_card
 
-    redirect to("/deck/#{params[:deck_id]}/#{current_game_card}")
+    redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
   end
 end
 
@@ -78,6 +78,7 @@ post '/deck/:deck_id/:card_id' do
     session[:error] = nil
 
     if session[:card_id].nil?
+      session[:game_id] = nil
       redirect to("/game_complete")
     else
       redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
