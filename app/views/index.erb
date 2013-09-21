@@ -5,7 +5,7 @@
 <% if @game %>
 <div class="resume">
 <!-- resume button / css attirbute active or hidden -->
-  <p>Resume</p>
+  <p><a href="/deck/<%= @game.deck_id %>/<%= @game.current_card %>">Resume</a></p>
   <!-- conditional button with hyperlink to game in progress  -->
 </div>
 <% end %>
@@ -17,8 +17,10 @@
 
 <div class="decks">
   <p>Choose Your Deck!</p>
-  <a href="/deck1"><img id="deck1" src="css/world_caps.jpg"></a>
-  <a href="/deck2"><img id="deck2" src="css/americana.jpg"></a>
-  <!-- Capital cities of the world 
-  US Quiz  -->
+  <% @decks.all.each do |deck| %>
+    <h3><%= deck.title %></h3>
+    <a href="/deck/<%= deck.id %>"><img id="deck<%=deck.id%>" src="css/world_caps.jpg"></a>
+    <p>Number of cards: <%= deck.cards.count %></p>
+    <p>Number of attempts: <%= deck.games.count %></p>
+  <% end %>
 </div>

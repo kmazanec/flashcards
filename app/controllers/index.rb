@@ -2,9 +2,12 @@ enable :sessions
 
 get '/' do
   # Look in app/views/index.erb
-  if logged_in?
+  session[:user_id] = 1
+
+  if true #logged_in?
     @user = current_user
     @game = current_game
+    @decks = Deck.all
     erb :index
   else
     erb :signup
@@ -15,12 +18,39 @@ end
 get '/deck/:deck_id' do
   # this will load the correct deck and then route to the first question
   # or the question the user was last on
+
+  existing_game = current_user.games.where("deck_id = #{params[:deck_id]} AND complete = false").first
+
+  if existing_game
+    session[:game_id] = existing_game.id
+    session[:card_id] = existing_game.current_card
+
+    redirect to("/deck/#{params[:deck_id]}/#{existing_game.current_card}")
+ 
+  else
+    @game = Game.create(start_time: Time.now,
+                        complete: false)
+
+    current_user.games << @game
+
+
+    current_deck = Deck.find(params[:deck_id])
+    current_deck.games << @game
+
+    @game.current_card = current_deck.cards.first.id
+    @game.save
+
+    session[:game_id] = @game.id
+    session[:card_id] = @game.current_card
+
+    redirect to("/deck/#{params[:deck_id]}/#{current_game_card}")
+  end
 end
 
 get '/deck/:deck_id/:card_id' do
-  # send the user to the given question, pull the data from the databse and send to the view
+  @card = Card.find(params[:card_id])
 
-
+  erb :game
 end
 
 # POST ===================================
@@ -34,14 +64,15 @@ post '/deck/:deck_id/:card_id' do
 end
 
 post '/login' do
-  # verify the user's info
-  # load their profile from the database
-  # send to home screen
 
 
+  erb :index
 end
 
 post '/signup' do
+
+
+  erb :index
 
 end
 
