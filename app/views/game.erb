@@ -1,5 +1,17 @@
 <div class="game_container">
   <h2><%= current_game.deck.title %></h2>
+  <% if session[:last_guess_correct] %>
+  <div id="correct_banner">
+    <h3>Your last guess was correct!</h3>
+  </div>
+  <% end %>
+
   <%= erb :_card, layout: false %>
+
+  <% if session[:last_guess_correct] == false %>
+  <div id="incorrect_banner">
+    <h3>Your last guess was wrong!</h3>
+  </div>
+  <% end %>
 
 </div>
