@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/css/header.css">
-
 <div class="logo">
   <a href='/'>Flash Cards</a>
 </div>
@@ -15,15 +13,17 @@
 
 <div class="form">
   <form action="/login" method="POST">
-    <div>
-      <input id="f-email" class="field" type="text" id="email" value="email" name="user[email]">
+    <div class="field">
+      <input id="f-email" type="text" id="email" value="email" name="user[email]">
     </div>
 
-    <div>
-      <input id="f-password" class="field" type="text" id="password" value="password" name="user[password]">
+    <div class="field">
+      <input id="f-password" type="text" id="password" value="password" name="user[password]">
     </div>
 
-    <div><input class="submit" type="submit" value="Log in"></div>
+    <div class="button">
+      <input type="submit" value="Log in">
+    </div>
   
   </form>
 </div>

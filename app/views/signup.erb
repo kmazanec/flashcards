@@ -1,30 +1,31 @@
-<div class="signup_container">
-  <h3>Signup for flashcards!</h3>
+<div class="signup">
+  <h2>Sign up for flashcards</h2>
   <% if @message %>
   <!-- message if the user already exists or password doesn't match -->
     <h4><%= @message %></h4>
   <% end %>
-
-  <form action="/signup" method="POST">
-    <div class="field">
-      <label for="name">Name: </label>
-      <input id="name" type="text" name="user[name]" value="<%= @user.try(:name)%>">
-    </div>
-    <div class="field">
-      <label for="email">Email: </label>
-      <input id="email" type="text" name="user[email]" value="<%= @user.try(:email)%>">
-    </div>
-    <div class="field">
-      <label for="password">Password: </label>
-      <input id="password" type="password" name="password">
-    </div>
-    <div class="field">
-      <label for="password_confirmation">Repeat password: </label>
-      <input id="password_confirmation" type="password" name="password_confirmation">
-    </div>
-    <div class="field">
-      <input type="submit">
-    </div>
-  </form>
+  <div class="form">
+    <form action="/signup" method="POST">
+      <div class="field">
+        <!-- <label for="name">Name: </label> -->
+        <input id="name" type="text" name="user[name]" value="name">
+      </div>
+      <div class="field">
+        <!-- <label for="email">Email: </label> -->
+        <input id="email" type="text" name="user[email]" value="email">
+      </div>
+      <div class="field">
+        <!-- <label for="password">Password: </label> -->
+        <input id="password" type="password" name="password" value="password">
+      </div>
+      <div class="field">
+        <!-- <label for="password_confirmation">Repeat password: </label> -->
+        <input id="password_confirmation" type="password" name="password_confirmation" value="repeat password">
+      </div>
+      <div class="button">
+        <input type="submit" value="register">
+      </div>
+    </form>
+  </div>
   
 </div>

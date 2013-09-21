@@ -1,26 +1,121 @@
-.container {
-  margin: 20px auto;
-  width: 100%;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-  max-width: 50%;
-  height: auto;
+/* CSS Body ***************************/
 
+body {
+  background-color: #eee;
 }
-th {
-  text-align: left;
+
+
+/* CSS Header *************************/
+
+.header {
+  background-color: #333;
+  min-height: 50px;
+  width: 100%;
+  display: inline-block;
+}
+
+.header div {
+  padding: 0 30px;
+}
+
+.header .logo, .header .form {
+  display: inline-block;
+  position: relative;
+}
+
+.header .logo {
+  float: left;
+  padding-top: 7px;
+  height: 43px;
+}
+
+.header .form {
+  float: right;
+}
+
+.header .logo a{
+  color: #fff;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header .form div {
+  display: inline;
+  padding: 0;
+  /*margin-left: 5px;*/
+}
+
+.header .form form {
+  padding: 12px 0;
+}
+
+.header .form .field input {
+  width: 100px;
+  margin-left: 5px;
+  background-color: #999;
+}
+
+.header .form .button input {
+  margin-left: 5px;
+}
+
+/* CSS Form ***************************/
+
+.form  {
+  font-size: 0.9em;
+}
+
+.form .field input { 
+  height: 25px;
+  width: 250px;
+  text-align: center;
+  background-color: #ddd;
+  border: solid 1px #bbb;
+  color: #222;
+}
+
+.form .button input {
+  font-weight: bold;
+  color: #0A4D3E;
+  background-color: #A7D1C8;
+  border: solid 1px #bbb;
+  height: 28px;
+}
+
+
+/* CSS Signup ************************/
+
+.signup {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.signup h2 {
+  text-align: center;
+}
+
+.signup .field input {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.signup .button input {
+  height: 40px;
+  width: 100%;
+}
+
+/*CSS Unsorted*/
+
+
+.content {
+  margin: 0 30px;
 }
 
 .status-bar {
   padding-bottom: 2px;
   background-color: #f5c2e6;
 
-}
-
-.header {
-  text-align: center;
-  text-style: bold;
-  border: 1px dotted aqua;
 }
 
 .resume {
@@ -53,4 +148,8 @@ th {
   border: 1px dotted black;
   height: 500px;
 }
+
+
+
+
 
