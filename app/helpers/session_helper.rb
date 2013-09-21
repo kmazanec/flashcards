@@ -17,6 +17,14 @@ helpers do
     end
   end
 
+  def load_existing_game_on_this_deck(deck_id)
+    puts "in load_existing_game_on_this_deck"
+    puts "deck_id: #{deck_id}"
+    @existing_game = current_user.games.where("deck_id = #{deck_id} AND complete = false").first
+    puts @existing_game
+    @existing_game
+  end 
+
   def game_in_progress?
     !current_game.nil?
   end

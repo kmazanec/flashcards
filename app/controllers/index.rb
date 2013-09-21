@@ -15,7 +15,8 @@ get '/' do
 end
 
 get '/game_complete' do
-  erb :game_complete
+    @last_deck_id = params[:last_deck_id]
+    erb :game_complete
 end
 
 
@@ -23,13 +24,12 @@ get '/deck/:deck_id' do
   # this will load the correct deck and then route to the first question
   # or the question the user was last on
 
-  existing_game = current_user.games.where("deck_id = #{params[:deck_id]} AND complete = false").first
+  if load_existing_game_on_this_deck(params[:deck_id])
+    session[:game_id] = @existing_game.id
+    session[:card_id] = @existing_game.current_card
+    session[:last_guess_correct] = nil
 
-  if existing_game
-    session[:game_id] = existing_game.id
-    session[:card_id] = existing_game.current_card
-
-    redirect to("/deck/#{params[:deck_id]}/#{existing_game.current_card}")
+    redirect to("/deck/#{params[:deck_id]}/#{@existing_game.current_card}")
  
   else
     @game = Game.create(start_time: Time.now,
@@ -46,6 +46,7 @@ get '/deck/:deck_id' do
 
     session[:game_id] = @game.id
     session[:card_id] = @game.current_card
+    session[:last_guess_correct] = nil
 
     redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
   end
@@ -53,7 +54,6 @@ end
 
 get '/deck/:deck_id/:card_id' do
   @card = Card.find(params[:card_id])
-
   erb :game
 end
 
@@ -65,21 +65,24 @@ post '/deck/:deck_id/:card_id' do
   #   IF correct, send the user to the next question and set the message to 'correct'
   #   NOT correct, send the user back to the same question with the wrong answer field and next question button
   # ALSO update the user's current session info (stats, etc)
-  new_response = Response.create(guess: params[:guess])
-  new_response.game = current_game
-  new_response.card = current_game_card
-  new_response.correct = ( new_response.guess == new_response.card.answer )
 
-  new_response.save
+  new_response = Response.create(guess: params[:guess], game: current_game, card: current_game_card)
+
+  new_response.update( correct: new_response.guess.downcase == new_response.card.answer.downcase )
+
+  session[:last_guess_correct] = new_response.correct
 
   if new_response.correct
     session[:card_id] = next_game_card_id
-    current_game.current_card = session[:card_id]
-    session[:error] = nil
+    current_game.update(current_card: session[:card_id])
 
     if session[:card_id].nil?
+      current_game.update(complete: true)
+      completed_deck_id = current_game.deck.id
       session[:game_id] = nil
-      redirect to("/game_complete")
+      session[:last_guess_correct] = nil
+
+      redirect to("/game_complete?last_deck_id=#{completed_deck_id}")
     else
       redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
     end
