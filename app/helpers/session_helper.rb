@@ -21,7 +21,7 @@ helpers do
     !current_game.nil?
   end
 
-  def current_card
+  def current_game_card
     if session[:card_id]
       @current_card ||= Card.find(session[:card_id])
     end
