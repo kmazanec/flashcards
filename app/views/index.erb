@@ -6,34 +6,50 @@
 
 <div class="three_fourth">
 
-<% if @game %>
-<a class="resume_link_fix" href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">
-  <div class="resume">
-<!-- resume button / css attirbute active or hidden -->
-  <p>Resume Deck: <%= @game.deck.title %></p>
-  <!-- conditional button with hyperlink to game in progress  -->
-</div>
-</a>
-<% end %>
-
-
-
   <div class="decks">
+  
+  <% if @game %>
+  <div class="flip-container resume_game">
+
+    <div class="deck front">
+
+      <div class="resume"><%= icon('forward2') %></div>
+
+        <a class="resume_link_fix" href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">
+          
+
+        <!-- resume button / css attirbute active or hidden -->
+          <p>Resume Deck: <%= @game.deck.title %></p>
+          <!-- conditional button with hyperlink to game in progress  -->
+            </a>
+      
+      </div>
+    </div>
+  <% end %>
+
+  
+
   <!--   <p>Choose Your Deck!</p> -->
     <% @decks = Deck.all %>
     <% @decks.all.each do |deck| %>
 
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper">
-
-        <a href="/deck/<%= deck.id %>">
-          <div class="deck front">
-
+        <div class="deck front">
+          <a href="/deck/<%= deck.id %>">
             <div> <img id="deck" src="<%= deck.image_url %>"> </div>
+            <div class="overlay"><div class="play "><%= icon('play2') %></div></div>
+            
+            </a>
+
             <div class="title"><%= deck.title %></div>
+            
+            
             <div class="card_count"><%= icon('stack') %>
               <span><%= deck.cards.count %></span>
             </div>
+
+           
           <!-- <p>Number of attempts: <%= deck.games.count %></p> -->
           </div>
         
@@ -45,7 +61,7 @@
         
 
         </div>
-        </a>
+
       </div>
     </div>
     <% end %>
@@ -62,7 +78,7 @@
       <td class="title">Decks played</td>
     </tr>
     <tr>
-      <td><%= icon('clock') %></td>
+      <td><%= icon('stopwatch') %></td>
       <td class="stat">0<span>h </span>32<span>m </span>25<span>s</span></td>
       <td class="title">Time played</td>
     </tr>
@@ -78,5 +94,8 @@
     </tr>
   </table>
 </div>
+
+
+
 
 </div>
