@@ -1,7 +1,10 @@
 /* CSS Body ***************************/
 
 body {
-  background-color: #eee;
+  background-image: url('duck.jpg');
+  background-repeat: no-repeat;
+  background-position : calc(75%) 0;
+
 }
 
 svg {

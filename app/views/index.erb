@@ -1,5 +1,5 @@
 <div>
-  <h1>Let's Play!</h1>
+  <h2>Choose your Deck!</h2>
 </div>
 
 
@@ -9,23 +9,23 @@
 <% if @game %>
 <div class="resume">
 <!-- resume button / css attirbute active or hidden -->
-  <p><a href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">Resume</a></p>
+  <p><a href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">Resume Game</a></p>
   <!-- conditional button with hyperlink to game in progress  -->
 </div>
 <% end %>
 
-<div class="stats">
+<!-- <div class="stats">
   <p>Deck stats</p>
   <!-- erb _deck_stats -->
-</div>
+<!-- </div>  -->
 
 <div class="decks">
-  <p>Choose Your Deck!</p>
+<!--   <p>Choose Your Deck!</p> -->
   <% @decks = Deck.all %>
   <% @decks.all.each do |deck| %>
     <div class="deck">
        <div>
-        <a href="/deck/<%= deck.id %>"><img id="deck" src="css/world_caps.jpg"></a>
+        <a href="/deck/<%= deck.id %>"><img id="deck" src="<%= deck.image_url %>"></a>
       </div>
       <div class="title">
         <%= deck.title %>
@@ -50,5 +50,11 @@
 
 <div class="one_fourth float_right">
   <span><%= erb :'icons/bars' %> User stats</span>
-  <p>Hey</p>
+  <ul>
+    <li>Players Total: <%= total_number_players %></li>
+    <li>Games Played: <%= total_games_played %></li>
+    <li>Correct Responses: <%= @user.number_of_correct_guesses %></li>
+    <li>Incorrect Responses: <%= @user.number_of_incorrect_guesses %></li> 
+  </ul>
+  <p>
 </div>

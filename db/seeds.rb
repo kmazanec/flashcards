@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class SeedDB
 
   def self.add_users(num)
@@ -10,8 +12,9 @@ class SeedDB
     end
   end
 
-  def self.create_deck(deck_title, cards)
+  def self.create_deck(deck_title, cover_image_url, cards)
     deck = Deck.new( title: deck_title,
+                     image_url: cover_image_url,
                      active: true )
 
     deck.save
@@ -65,15 +68,45 @@ cards = [ {q: "What's the capital of Norway?", a: "Oslo" },
           {q: "What's the capital of England?", a: "London"},
           {q: "What's the capital of Iceland?", a: "Reykjavik"} ]
 
-SeedDB.create_deck("Capitol cities of the world", cards)
+SeedDB.create_deck("Capitol cities of the world", "/images/world_caps.jpg", cards)
 
-cards2 = [ {q: "What's the largest state in the US by land area?", a: "Alaska" },
-           {q: "What's the largest state in the US by population?", a: "California"},
-           {q: "What's the smallest state in the US by land area?", a: "Rhode Island"},
-           {q: "What's the smalles state in the US by population?", a: "Wyoming"}]
+cards = [ {q: "What's the largest state in the US by land area?", a: "Alaska" },
+          {q: "What's the largest state in the US by population?", a: "California"},
+          {q: "What's the smallest state in the US by land area?", a: "Rhode Island"},
+          {q: "What's the smalles state in the US by population?", a: "Wyoming"}]
 
-SeedDB.create_deck("Some questions about the US", cards2)
+SeedDB.create_deck("Some questions about the US", "/images/americana.jpg", cards)
 
+cards = [ {q: "1 + 3", a: "4" },
+          {q: "5 - 1", a: "4"},
+          {q: "2 * 2", a: "4"},
+          {q: "8 / 2", a: "4"},
+          {q: "4 + 0", a: "4"},
+          {q: "9 - 5", a: "4"},
+          {q: "15 - 15 + 4", a: "4"},
+          {q: "4 + 4 - 4", a: "4"},
+          {q: "(9 * 1) - 5", a: "4"},
+          {q: "10 - 6", a: "4"},
+          {q: "15 - 11", a: "4"},
+          {q: "-4 + 8", a: "4"},
+          {q: "5 - 1", a: "4"},
+          {q: "4 * 1", a: "4"},
+          {q: "6 + 2 - 4", a: "4"},
+          {q: "5 - 2 + 1", a: "4"},
+          {q: "(4 * 0) + 4", a: "4"},
+          {q: "3 + 1", a: "4"}]
+
+SeedDB.create_deck("Simple math", "/images/math.jpg", cards)
+
+cards = [ {q: "Write this word PNEUMONO­ULTRA­MICRO­SCOPIC­SILICO­VOLCANO­KONIOSIS", a: "PNEUMONO­ULTRA­MICRO­SCOPIC­SILICO­VOLCANO­KONIOSIS" },
+          {q: "Write this word HEPATICO­CHOLANGIO­CHOLECYST­ENTERO­STOMIES", a: "HEPATICO­CHOLANGIO­CHOLECYST­ENTERO­STOMIES" },
+          {q: "Write this word SUPER­CALI­FRAGI­LISTIC­EXPI­ALI­DOCIOUS", a: "SUPER­CALI­FRAGI­LISTIC­EXPI­ALI­DOCIOUS" },
+          {q: "Write this word FLOCCI­NAUCINI­HILIPIL­IFICATION", a: "FLOCCI­NAUCINI­HILIPIL­IFICATION" },
+          {q: "Write this word ANTI­DIS­ESTABLISH­MENT­ARIAN­ISM", a: "ANTI­DIS­ESTABLISH­MENT­ARIAN­ISM" },
+          {q: "Write this word HONORI­FICABILI­TUDINI­TATIBUS", a: "HONORI­FICABILI­TUDINI­TATIBUS" },
+          {q: "Write this word ELECTRO­ENCEPHALO­GRAPHICALLY", a: "ELECTRO­ENCEPHALO­GRAPHICALLY" }]
+
+SeedDB.create_deck("Typing out the longest words", "/images/words.jpg", cards)
 
 User.all.each do |user|
   num_plays = rand(4)+1
