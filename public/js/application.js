@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-
-
-
   $('#f-email').focus(function(event){
     $(this).animate({width: "170px"});
     // $(this).css("background-color","#bbb");
@@ -64,18 +61,18 @@ $(document).ready(function() {
   });
   
 
-  $(window).scroll(function(){
-    var scrollTop = 90;
-    if($(window).scrollTop() >= scrollTop){
-        $('.header').css({
-            position : 'fixed',
-            top : '0'
-        });
-    }
-    if($(window).scrollTop() < scrollTop){
-        $('.header').removeAttr('style');
-    }
-  });
+  // $(window).scroll(function(){
+  //   var scrollTop = 90;
+  //   if($(window).scrollTop() >= scrollTop){
+  //       $('.header').css({
+  //           position : 'fixed',
+  //           top : '0'
+  //       });
+  //   }
+  //   if($(window).scrollTop() < scrollTop){
+  //       $('.header').removeAttr('style');
+  //   }
+  // });
 
   $('#guess').keyup(function(){
     if ($('#embedded_answer').text().toLowerCase() == $('#guess').val().toLowerCase()) {
