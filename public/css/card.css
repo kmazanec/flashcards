@@ -1,0 +1,75 @@
+/* FLASHCARD STYLING =======================*/
+
+.card_container {
+  border: 1px dotted #888;
+  box-shadow: 0 0 20px #aaa;
+  margin: 10px auto;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-out;
+  background: #022A46;
+  opacity: 0.8;
+  min-height: 200px;
+  min-width: 100px;
+  max-width: 600px;
+}
+
+.card {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.card_container .card h3 {
+  color: #FFF;
+  font-weight: lighter;
+}
+
+.card .submit {
+  min-width: 100px;
+  min-width: 200px;
+  width: 70%;
+  background-color: #2A6349;
+  border: 0;
+}
+
+.card .submit:hover {
+  background-color: #73F2B8;
+}
+
+.card .guess_input {
+  width: 70%;
+  text-align: center;
+  min-width: 200px;
+  height: 50px;
+  font-size: 2em;
+}
+
+/* CORRECT AND INCORRECT BANNERS ===================*/
+
+.banner {
+  opacity: 0.8;
+  height: 50px;
+  min-width: 100px;
+  max-width: 600px;
+  border: 1px dotted #888;
+  box-shadow: 0 0 20px #aaa;
+  margin: 10px auto;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-out;  
+}
+
+.incorrect {
+  background: #E31217;
+}
+
+.incorrect h3 {
+  
+}
+
+.correct {
+  background: #69CC10;
+}
+
+
+
+
+
