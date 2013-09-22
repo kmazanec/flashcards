@@ -143,6 +143,33 @@
 
 /* RESUME BUTTON */
 
+.resume {
+  border: 1px solid #888;
+  width: 350px;
+  margin: 15px 0;
+  min-height: 40px;
+  background-color: #2A6349;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+  opacity: 0.8;
+  text-align: center;
+}
+.resume:hover {
+  background-color: #73F2B8;
+  color: #222;
+}
+
+.resume p {
+  padding: 10px;
+  margin: 0;
+}
+.resume_link_fix {
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+
 /* IN GAME NAV */
 
 .game_container .deck_title {
