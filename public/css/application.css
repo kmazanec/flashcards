@@ -97,6 +97,12 @@ svg {
 
 /* CSS Columns ************************/
 
+.home {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
 .float_right {
   float: right;
 }
@@ -106,28 +112,60 @@ svg {
 }
 
 .one_fourth {
-/*  background-color: #ccc;*/
-  max-width: 24%;
-  display: inline-table;
-  padding: 10px;
-  box-sizing: border-box; 
+  display: inline-block;
+  width: 300px;
 }
 
 
 .three_fourth {
-  width: 74%;
-  display: inline-table;
+  min-width: 320px;
+  max-width: 72%;
+  display: inline-block;
 }
 
 img .logo {
   fill: #117645;
 }
 
-
-
 .content {
   margin: 0 20px;
 }
+
+
+@media screen and (max-width: 320px) {
+.one_fourth {
+  width: 100%;
+}
+
+.three_fourth {
+  width: 100%;
+}
+
+}
+
+@media screen and (min-width : 321px) and (max-width: 750px) {
+
+.one_fourth { width: 100%;
+              margin-bottom: 20px; }
+.three_fourth { width: 100%; }
+
+}
+
+@media screen and (min-width : 751px) and (max-width: 1100px) {
+
+.one_fourth { width: 47%; }
+.three_fourth { width: 47%; }
+
+}
+
+
+@media screen and (min-width : 1101px) and (max-width: 1200px) {
+
+.one_fourth { width: 30%; }
+.three_fourth { width: 68%; }
+
+}
+
 
 /* CSS Header *************************/
 
@@ -271,7 +309,7 @@ img .logo {
   background-color: rgba(188, 223, 247,0.92);
   box-shadow: 0px 0px 30px rgba(0, 0, 0,0.2);
   border-radius: 10px;
-  min-width: 350px;
+  width: 300px;
   padding: 15px;
 
 }
@@ -378,6 +416,7 @@ img .logo {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  background-color: #fff;
 }
 
 

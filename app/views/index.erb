@@ -2,8 +2,9 @@
   <h2>Choose your Deck!</h2>
 </div>
 
+<div class="home">
 
-<!-- <div class="three_fourth"> -->
+<div class="three_fourth">
 
 <% if @game %>
 <a class="resume_link_fix" href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">
@@ -17,7 +18,6 @@
 
 
 
-
   <div class="decks">
   <!--   <p>Choose Your Deck!</p> -->
     <% @decks = Deck.all %>
@@ -26,7 +26,7 @@
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper">
 
-        <!-- <a href="/deck/<%= deck.id %>"> -->
+        <a href="/deck/<%= deck.id %>">
           <div class="deck front">
 
             <div> <img id="deck" src="<%= deck.image_url %>"> </div>
@@ -45,13 +45,13 @@
         
 
         </div>
-   <!--      </a> -->
+        </a>
       </div>
     </div>
     <% end %>
   </div>
 
-<!-- </div> -->
+</div>
 
 <div class="stats one_fourth float_right">
   <span class="title"><%= erb :'icons/bars' %> User stats</span>
@@ -77,4 +77,6 @@
       <td class="title">Incorrect answers</td>
     </tr>
   </table>
+</div>
+
 </div>
