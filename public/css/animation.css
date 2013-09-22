@@ -1,0 +1,16 @@
+/*  Animations
+-------------------------------*/
+
+.duck img {
+  -webkit-animation: rock-duck 5s ease-in-out infinite;
+}
+
+
+
+
+/*  Keyframes
+-------------------------------*/ 
+
+@-webkit-keyframes rock-duck {
+  50% {-webkit-transform: rotate(4deg) translateY(-5px) translateX(-10px); }
+}
