@@ -37,6 +37,39 @@ $(document).ready(function() {
   });
 
 
+ $('input').focus(function(event){
+    // $(this).css("background-color","#bbb");
+       $(this).val("");
+    
+    if ( $(this).val() == "password" ) {
+      $(this).attr("type","password");
+    };
+  });
+
+
+
+
+
+  $('.signup form').submit(function(event){
+    event.preventDefault();
+    var user_input = $('.signup form').serialize();
+    $.post('/signup', user_input, function(response){ 
+      if (response == "success")
+      {
+        alert(response);
+        window.location.href = '/'; 
+      }
+      else {
+        alert(response);  
+      }
+    });
+  });
+  
+
+
+
+
+
   $(window).scroll(function(){
         var scrollTop = 90;
         if($(window).scrollTop() >= scrollTop){
