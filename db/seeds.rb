@@ -113,7 +113,7 @@ cards = [ {q: "A shorthand property for all the animation properties below, exce
           {q: "Specifies the speed curve of the animation", a: "animation-timing-function" },
           {q: "Specifies when the animation will start", a: "animation-delay" }, ]
 
-SeedDB.create_deck("CSS Properties", "/images/xxx.jpg", cards)
+SeedDB.create_deck("CSS Properties", "/images/css3.jpg", cards)
 
 cards = [ {q: "Represents a collection of metadata about the document, including links to, or definitions of, scripts and style sheets.", a: "head" },
           {q: "Defines the title of the document, shown in a browser's title bar or on the page's tab. It can only contain text and any contained tags are not interpreted.", a: "title" },
@@ -121,7 +121,7 @@ cards = [ {q: "Represents a collection of metadata about the document, including
           {q: "Used to link JavaScript and external CSS with the current HTML document", a: "link" },
           {q: "Defines metadata that can't be defined using another HTML element.", a: "meta" }, ]
 
-SeedDB.create_deck("HTML5 Elements", "/images/xxx.jpg", cards)
+SeedDB.create_deck("HTML5 Elements", "/images/html5.jpg", cards)
 
 
 # cards = [ {q: "", a: "" },
