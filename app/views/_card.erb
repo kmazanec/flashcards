@@ -1,7 +1,7 @@
 <div class="card_container">
   <div class="card">
     <h3><%= @card.question %></h3>
-    <form action="/deck/<%= @card.deck_id %>/<%= @card.id %>" method="POST">
+    <form id="submit_guess" action="/deck/<%= @card.deck_id %>/<%= @card.id %>" method="POST">
       <p><input class="guess_input" id="guess" type="text" name="guess"></p>
       <p><input class="submit" type="submit" value="Did I get it right?"></p>
     </form>
