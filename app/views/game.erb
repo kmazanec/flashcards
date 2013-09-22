@@ -1,21 +1,19 @@
 <div class="game_container">
   <h2><%= current_game.deck.title %></h2>
   <% if session[:last_guess_correct] %>
-  <div id="correct_banner" class="correct banner">
-    <h3>Your last guess was correct!</h3>
-  </div>
+    <div id="correct_banner" class="correct banner">
+      <h3>Goose! You're on it!</h3>
+    </div>
+  <% elsif session[:last_guess_correct] == false %>
+    <div id="incorrect_banner" class="incorrect banner">
+      <h3>Quack! That's not quite right...</h3>
+    </div>
   <% end %>
 
   <%= erb :_card, layout: false %>
 
-  <% if session[:last_guess_correct] == false %>
-  <div id="incorrect_banner" class="incorrect banner">
-    <h3>Incorrect</h3>
-  </div>
-  <% end %>
-
-  <div>
-    <h4>Card <%= %> of </h4>
+  <div class="card_counter">
+    <h4>Card <%= %> of <%= %></h4>
   </div>
 
 </div>
