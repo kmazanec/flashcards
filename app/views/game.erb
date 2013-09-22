@@ -16,19 +16,23 @@
 
   <div class="game_nav_container">
     <div class="submit_container">
-      <form action="/deck/<%= @game.deck.id %>/<%= @game.last_card_id %>" method="get">
+      <% if prev_game_card_id %>
+      <form action="/deck/<%= @game.deck.id %>/<%= prev_game_card_id %>" method="get">
         <input class="nav_button" type="submit" value="< Previous Card">
       </form>
+      <% end %>
     </div>
     <div class="submit_container">
-      <form action="/deck/<%= @game.deck.id %>/<%= @game.next_card_id %>">
+      <% if next_game_card_id %>
+      <form action="/deck/<%= @game.deck.id %>/<%= next_game_card_id %>">
         <input class="nav_button" type="submit" value="Skip this card >">
       </form>
+      <% end %>
     </div>
   </div>
 
-  <div class="card_counter">
+<!--   <div class="card_counter">
     <h4>Card <%= %> of <%= %></h4>
-  </div>
+  </div> -->
 
 </div>

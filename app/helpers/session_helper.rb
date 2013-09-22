@@ -40,6 +40,13 @@ helpers do
     temp_card ? temp_card.id : nil
   end
 
+  def prev_game_card_id
+    current_card_index = current_game.cards.index(current_game_card)
+    return nil if current_card_index == 0
+
+    current_game.cards[current_card_index-1]
+  end
+
 
 
   
