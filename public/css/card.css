@@ -1,7 +1,7 @@
 /* FLASHCARD STYLING =======================*/
 
 .card_container {
-  border: 1px dotted #888;
+  border: 1px solid #888;
   box-shadow: 0 0 20px #aaa;
   margin: 10px auto;
   border-radius: 10px;
@@ -94,7 +94,7 @@
 /* COMPLETE =============== */
 
 .game_complete {
-  border: 1px dotted #888;
+  border: 1px solid #888;
   box-shadow: 0 0 20px #aaa;
   margin: 20px auto;
   border-radius: 10px;
@@ -144,5 +144,43 @@
 
 /* RESUME BUTTON */
 
+/* IN GAME NAV */
+
+.game_container .deck_title {
+  margin: 20px auto;
+  max-height: 60px;
+  min-width: 100px;
+  max-width: 600px;
+}
+
+.game_container .nav_button {
+  border: 1px solid #888;
+  min-width: 220px;
+  max-width: 200px;
+  min-height: 40px;
+  background-color: #2A6349;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+  opacity: 0.8;
+}
+
+.game_container .nav_button:hover {
+  background-color: #73F2B8;
+  color: #222;
+}
+
+.game_container .submit_container {
+  float: left;
+  margin: 10px 40px;
+}
+
+.game_nav_container {
+  margin: 20px auto;
+  min-height: 240px;
+  min-width: 100px;
+  max-width: 600px;
+  text-align: center;  
+}
 
 

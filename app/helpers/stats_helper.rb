@@ -12,6 +12,10 @@ helpers do
     @last_correct_count = Game.find(session[:last_game_id]).responses.where(correct: true).count
   end
 
+  def last_game_incorrect_answers
+    Game.find(session[:last_game_id]).responses.where(correct: false).count   
+  end
+
   def last_game_length
     @last_length = Game.find(session[:last_game_id]).deck.cards.length
   end

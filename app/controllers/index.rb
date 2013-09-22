@@ -55,6 +55,7 @@ end
 
 get '/deck/:deck_id/:card_id' do
   @card = Card.find(params[:card_id])
+  @game = Game.find(session[:game_id])
   erb :game
 end
 
