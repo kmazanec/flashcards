@@ -34,9 +34,9 @@ body .wave img {
 body .duck img {
   /*display: block;*/
   position: fixed;
-  max-height: 450px;
+  max-height: 320px;
   max-width: 35%;
-  margin: 0 0 3% 0;
+  margin: 0 0 4% 0;
   bottom: 0;
   right: 0;
   z-index: -9;
@@ -47,7 +47,7 @@ svg {
   height: 50px;
 }
 
-/* CSS Columns ************************/
+/* CSS Columns ****************************************************************/
 
 .home {
   width: 100%;
@@ -79,7 +79,7 @@ img .logo {
 }
 
 .content {
-  margin: 0 20px;
+  margin: 80px 20px 0 20px;
 }
 
 
@@ -125,19 +125,19 @@ background-image: -moz-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0)
 background-image: -webkit-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
 background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
   */  
-background-image: linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
-background-image: -o-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
-background-image: -moz-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
-background-image: -webkit-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
-background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
-
-
-
   min-height: 60px;
   width: 100%;
+  position: fixed;
   display: inline-block;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
   z-index: 100;
+  top: 0;
+
+  background-image: linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
 }
 
 .header div {
@@ -474,6 +474,21 @@ background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168)
   width: 22px;
   height: 22px;
   margin-bottom: -3px;
+}
+
+/* CSS Status Bar *************************************************************/
+
+.status_bar {
+background-color: rgba(234,246,253,0.9);
+height: 30px;
+border-radius: 5px;
+}
+
+.status_bar .current_position {
+height: inherit;
+background-image: url('/images/status_y_g.svg');
+background-size: 30px;
+border-radius: inherit;
 }
 
 
