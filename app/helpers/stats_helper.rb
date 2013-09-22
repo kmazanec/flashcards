@@ -23,4 +23,10 @@ helpers do
   def last_game_score_percentage
     ( @last_correct_count / @last_length)*100
   end
+
+  def current_card_position
+    deck = current_game.deck 
+    current_card = current_game_card 
+    deck.cards.find_index(current_card)
+  end 
 end

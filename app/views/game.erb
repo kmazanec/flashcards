@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/status_bar.css">
+
 <div class="game_container">
   <div class="deck_title">
     <h2>Deck: <%= current_game.deck.title %></h2>
@@ -16,6 +18,14 @@
 
 
   <div class="game_nav_container">
+    <div class="status_bar">
+      <div class="current_position" style="width: <%= current_card_position.to_f / current_game.deck.cards.count * 100 %>%;">
+      </div>
+
+    </div>
+              <div class="counter"> 
+          <p>Card <%= current_card_position %> of <%= current_game.deck.cards.count %></p>
+          </div>
     <div class="submit_container">
       <% if prev_game_card_id %>
       <form action="/deck/<%= @game.deck.id %>/<%= prev_game_card_id %>" method="get">
