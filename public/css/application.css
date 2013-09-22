@@ -16,40 +16,6 @@ html {
   );
 }
 
-
-
-body {
-  /*height: 100%;*/
-/*  background-image: url('/images/wave.svg');
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: 1;*/
-}
-
-
-
-
-/*
-body {
-  height: 100%;
-  
-  background:
-  background-image: url('/images/rubber_duck.svg') 30% no-repeat,
-  background-image: url('/images/wave.svg') 100% no-repeat;
-  
-/*
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;*/
-}
-*/
-
-
 body .wave, body .duck  {
   width: 100%;
   display: block;
@@ -75,20 +41,6 @@ body .duck img {
   right: 0;
   z-index: -9;
 }
-
-
-/*
-body {
-  background-image: url('/images/rubber_duck.svg');
-  background-size: 30%;
-  background-position: bottom right;
-  background-attachment: fixed;
-  background-origin: ;
-  background-color: #C0F2DB;
-}
-*/
-
-
 
 svg {
   width: 50px;
@@ -116,7 +68,6 @@ svg {
   width: 300px;
 }
 
-
 .three_fourth {
   min-width: 320px;
   max-width: 72%;
@@ -133,13 +84,9 @@ img .logo {
 
 
 @media screen and (max-width: 320px) {
-.one_fourth {
-  width: 100%;
-}
+.one_fourth { width: 100%; }
 
-.three_fourth {
-  width: 100%;
-}
+.three_fourth { width: 100%; } 
 
 }
 
@@ -170,15 +117,37 @@ img .logo {
 /* CSS Header *************************/
 
 .header {
-  background-color: #2A4A60;
-  min-height: 50px;
+  /*background-color: #2A4A60;*/
+  /*background-color: #2D57A4;*/
+ /* background-image: linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -o-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+  */  
+background-image: linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -o-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+
+
+
+  min-height: 60px;
   width: 100%;
   display: inline-block;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  z-index: 100;
 }
 
 .header div {
   padding: 0 20px;
+}
+
+.header .logo_image {
+  display: inline-block;
+  padding-left: 0px;
+  margin-top: -4px;
 }
 
 .header .logo, .header .form {
@@ -190,16 +159,27 @@ img .logo {
   float: left;
   padding-top: 7px;
   height: 43px;
+  display: inline-block;
+  float: left;
 }
 
 .header .form {
   float: right;
 }
 
-.header .logo a{
-  color: #fff;
-  font-size: 2em;
+.header .logo .logo_text a{
+  color: #FFD734;
+  font-size: 2.2em;
   text-decoration: none;
+  display: inline-block;
+  text-shadow: 1px 1px 4px #555;
+}
+
+.header .logo .logo_text{
+  display: inline-block;
+  padding: 0;
+  top: -12px;
+  position: relative;
 }
 
 .header .form div {
@@ -240,8 +220,8 @@ img .logo {
     margin-right: -8px;
     margin-left: 10px;
     margin-bottom: -5px;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
   }
 
 .header .form .button .icon svg {
