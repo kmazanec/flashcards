@@ -25,6 +25,12 @@ get '/deck/:deck_id' do
   # this will load the correct deck and then route to the first question
   # or the question the user was last on
 
+  if request.xhr?
+    puts
+    puts "Detected ajax in the get deck method"
+    puts
+  end
+
   if load_existing_game_on_this_deck(params[:deck_id])
     session[:game_id] = @existing_game.id
     session[:card_id] = @existing_game.current_card
@@ -54,9 +60,22 @@ get '/deck/:deck_id' do
 end
 
 get '/deck/:deck_id/:card_id' do
+
+  if request.xhr?
+    puts
+    puts "Detected ajax in the get card method"
+    puts
+  end
+
   @card = Card.find(params[:card_id])
   @game = Game.find(session[:game_id])
-  erb :game
+
+  if request.xhr?
+    erb :game, layout: false;
+  else
+    erb :game
+  end
+
 end
 
 # POST ===================================
@@ -67,6 +86,11 @@ post '/deck/:deck_id/:card_id' do
   #   IF correct, send the user to the next question and set the message to 'correct'
   #   NOT correct, send the user back to the same question with the wrong answer field and next question button
   # ALSO update the user's current session info (stats, etc)
+  if request.xhr?
+    puts
+    puts "Detected ajax in the post method"
+    puts
+  end
 
   new_response = Response.create(guess: params[:guess], game: current_game, card: current_game_card)
 
@@ -90,7 +114,6 @@ post '/deck/:deck_id/:card_id' do
       redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
     end
   else
-    session[:error] = "WRONG ANSWER"
 
     redirect to("/deck/#{params[:deck_id]}/#{session[:card_id]}")
   end

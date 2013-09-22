@@ -36,6 +36,8 @@
 .card .submit:hover {
   background-color: #73F2B8;
   color: #222;
+  box-shadow: 0px 0px 10px #2A475C;
+
 }
 
 .card .guess_input {
@@ -130,11 +132,16 @@
   border: 0;
   border-radius: 10px;
   color: #FFF;
+  box-shadow: 0px 0px 20px #aaa;
+
+  transition: box-shadow 0.2s ease-out;
 }
 
 .game_complete .submit:hover {
   background-color: #73F2B8;
   color: #222;
+  box-shadow: 0px 0px 10px #2A475C;
+
 }
 
 .game_complete .submit_container {
@@ -143,6 +150,39 @@
 }
 
 /* RESUME BUTTON */
+
+.resume {
+  border: 1px solid #888;
+  width: 350px;
+  margin: 15px 0;
+  min-height: 40px;
+  background-color: #2A6349;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+  opacity: 0.8;
+  text-align: center;
+  box-shadow: 0px 0px 20px #aaa;
+
+  transition: box-shadow 0.2s ease-out;
+
+}
+.resume:hover {
+  background-color: #73F2B8;
+  color: #222;
+  box-shadow: 0px 0px 10px #2A475C;
+
+}
+
+.resume p {
+  padding: 10px;
+  margin: 0;
+}
+.resume_link_fix {
+  text-decoration: none;
+  font-weight: lighter;
+}
+
 
 /* IN GAME NAV */
 
@@ -163,11 +203,17 @@
   border-radius: 10px;
   color: #FFF;
   opacity: 0.8;
+  box-shadow: 0px 0px 20px #aaa;
+
+  transition: box-shadow 0.2s ease-out;
+
 }
 
 .game_container .nav_button:hover {
   background-color: #73F2B8;
   color: #222;
+  box-shadow: 0px 0px 10px #2A475C;
+
 }
 
 .game_container .submit_container {

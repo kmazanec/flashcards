@@ -16,40 +16,6 @@ html {
   );
 }
 
-
-
-body {
-  /*height: 100%;*/
-/*  background-image: url('/images/wave.svg');
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: 1;*/
-}
-
-
-
-
-/*
-body {
-  height: 100%;
-  
-  background:
-  background-image: url('/images/rubber_duck.svg') 30% no-repeat,
-  background-image: url('/images/wave.svg') 100% no-repeat;
-  
-/*
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;*/
-}
-*/
-
-
 body .wave, body .duck  {
   width: 100%;
   display: block;
@@ -68,26 +34,13 @@ body .wave img {
 body .duck img {
   /*display: block;*/
   position: fixed;
-  width: 35%;
+  max-height: 450px;
+  max-width: 35%;
   margin: 0 0 3% 0;
   bottom: 0;
   right: 0;
   z-index: -9;
 }
-
-
-/*
-body {
-  background-image: url('/images/rubber_duck.svg');
-  background-size: 30%;
-  background-position: bottom right;
-  background-attachment: fixed;
-  background-origin: ;
-  background-color: #C0F2DB;
-}
-*/
-
-
 
 svg {
   width: 50px;
@@ -95,6 +48,12 @@ svg {
 }
 
 /* CSS Columns ************************/
+
+.home {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
 
 .float_right {
   float: right;
@@ -105,25 +64,18 @@ svg {
 }
 
 .one_fourth {
-  background-color: #ccc;
-  width: 24%;
-  display: inline-table;
-  padding: 10px;
-  box-sizing: border-box; 
+  display: inline-block;
+  width: 300px;
 }
 
-
 .three_fourth {
-  width: 72%;
-  display: inline-table;
+  min-width: 320px;
+  max-width: 72%;
+  display: inline-block;
 }
 
 img .logo {
   fill: #117645;
-}
-
-span {
-  font-size: 2em;
 }
 
 .content {
@@ -131,18 +83,71 @@ span {
 }
 
 
+@media screen and (max-width: 320px) {
+.one_fourth { width: 100%; }
+
+.three_fourth { width: 100%; } 
+
+}
+
+@media screen and (min-width : 321px) and (max-width: 750px) {
+
+.one_fourth { width: 100%;
+              margin-bottom: 20px; }
+.three_fourth { width: 100%; }
+
+}
+
+@media screen and (min-width : 751px) and (max-width: 1100px) {
+
+.one_fourth { width: 47%; }
+.three_fourth { width: 47%; }
+
+}
+
+
+@media screen and (min-width : 1101px) and (max-width: 1200px) {
+
+.one_fourth { width: 30%; }
+.three_fourth { width: 68%; }
+
+}
+
+
 /* CSS Header *************************/
 
 .header {
-  background-color: #2A4A60;
-  min-height: 50px;
+  /*background-color: #2A4A60;*/
+  /*background-color: #2D57A4;*/
+ /* background-image: linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -o-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 5%, rgb(255,227,117) 100%);
+  */  
+background-image: linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -o-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
+
+
+
+  min-height: 60px;
   width: 100%;
   display: inline-block;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  z-index: 100;
 }
 
 .header div {
   padding: 0 20px;
+}
+
+.header .logo_image {
+  display: inline-block;
+  padding-left: 0px;
+  margin-top: -4px;
 }
 
 .header .logo, .header .form {
@@ -154,16 +159,27 @@ span {
   float: left;
   padding-top: 7px;
   height: 43px;
+  display: inline-block;
+  float: left;
 }
 
 .header .form {
   float: right;
 }
 
-.header .logo a{
-  color: #fff;
-  font-size: 2em;
+.header .logo .logo_text a{
+  color: #FFD734;
+  font-size: 2.2em;
   text-decoration: none;
+  display: inline-block;
+  text-shadow: 1px 1px 4px #555;
+}
+
+.header .logo .logo_text{
+  display: inline-block;
+  padding: 0;
+  top: -12px;
+  position: relative;
 }
 
 .header .form div {
@@ -204,12 +220,12 @@ span {
     margin-right: -8px;
     margin-left: 10px;
     margin-bottom: -5px;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
   }
 
 .header .form .button .icon svg {
-  fill: #C2DDF0;
+  fill: #FDD633;
 } 
 
 .header .form .button .icon svg:hover {
@@ -264,19 +280,137 @@ span {
 
 .signup .button input {
   height: 40px;
+<<<<<<< HEAD
   width: 102%;
+=======
+  width: 100%;
+}
+
+/* CSS Stats User Page ***************/
+
+.content .stats {
+  background-color: rgba(188, 223, 247,0.92);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0,0.2);
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+>>>>>>> dacd9cbdcd38221cbddb3209bb2c0faae6f575dd
 
 }
 
+.content .stats svg {
+  fill: #0C4232;
+  width: 35px;
+  height: 35px;
+
+}
+
+.content .stats span.title {
+  font-size: 2.5em;
+  font-family: "Helvetica Neue";  
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-top: 0;
+  padding: 0;
+  color: #0C4232;
+}
+
+.content .stats table {
+  margin-top: 20px;
+  margin: 20px 0 0 15px;
+  color: #0C4232;
+}
+
+.content .stats table svg {
+  height: 25px;
+  width: 25px;
+}
+
+.content .stats table td {
+  padding-right: 10px;
+}
+
+.content .stats table td.stat {
+  text-align: center;
+}
+
+
+.content .stats table tr td.title{
+  text-transform: capitalize;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.content .stats table tr td span{
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
 
 
 /* CSS Deck **************************/
 
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+  display: inline-block;
+  margin: 0 20px 20px 0;
+}
 
-.content .deck {
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #fff;
+}
+
+
+.content .flip-container, .content .front, .content .back, .content .deck  {
   width: 350px;
   height: 150px;
-  display: inline-table;
+}
+
+.content .deck {
+  
   float: left;
 /*  background-image: linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
   background-image: -o-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
@@ -292,20 +426,18 @@ span {
 
 
   box-shadow: 0px 0px 20px #aaa;
-  margin: 0 20px 20px 0;
-  border-radius: 10px;
-/*  border: 3px solid #2A475C;*/
-  transition: box-shadow 0.2s ease-out;
-  position: relative;
 
+  border-radius: 10px;
+  /*transition: box-shadow 0.2s ease-out;*/
+  /*position: relative;*/
 }
-.content .deck a {
+/*.content .deck a {
   text-decoration: none; 
 }
 
 .content .deck:hover {
   box-shadow: 0px 0px 10px #2A475C;
-}
+}*/
 
 .content .deck img {
   width: 150px;
@@ -332,7 +464,6 @@ span {
   margin: 0 0 2px 7px;
   position: absolute;
   display: block;
-
 }
 
 .content .deck .card_count span {
@@ -349,48 +480,13 @@ span {
   height: 22px;
   margin-bottom: -3px;
 }
-/*
-#FCC200;
-*/
 
-/*CSS Unsorted*/
 
-/*.status-bar {
-  padding-bottom: 2px;
-  background-color: #f5c2e6;
 
-}*/
 
-/*.resume {
-  border: 1px solid tomato;
 
-}
 
-.stats {
-  border: 1px solid yellow;
 
-}
-
-.decks {
-  border: 1px solid teal;
-}
-*/
-/*#deck1, #deck2 {
-  border-radius: 20px;
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
-  text-align: auto;
-}*/
-
-.footer { 
-  text-align: bottom;
-}
-
-.partial_container {
-  border: 1px dotted black;
-  height: 500px;
-}
 
 
 
