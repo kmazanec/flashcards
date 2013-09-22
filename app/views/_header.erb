@@ -24,6 +24,14 @@
 <% else %>
 
 <div class="form">
+
+<div class="login_error" >
+    <% if session[:error] %>
+      <%= session[:error] %>
+      <% session[:error]='' %>
+    <% end %>
+</div>  
+
   <form action="/login" method="POST">
     <div class="icon"><%= icon('envelop') %></div>
     <div class="field">
