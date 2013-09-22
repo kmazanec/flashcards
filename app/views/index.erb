@@ -23,26 +23,32 @@
 <!--   <p>Choose Your Deck!</p> -->
   <% @decks = Deck.all %>
   <% @decks.all.each do |deck| %>
-    <div class="deck">
-       <div>
-        <a href="/deck/<%= deck.id %>"><img id="deck" src="<%= deck.image_url %>"></a>
-      </div>
-      <div class="title">
-        <%= deck.title %>
-      </div>
-      <div class="card_count">
-        <%= icon('stack') %>
-        <span><%= deck.cards.count %></span>
-      </div>
-     
-
+    <a href="/deck/<%= deck.id %>">
+      <div class="deck">
       
-      
+        <div>
+          <img id="deck" src="<%= deck.image_url %>">
+        </div>
 
-<!--       <p>Number of cards: <%= deck.cards.count %></p>
-      <p>Number of attempts: <%= deck.games.count %></p> -->
+        <div class="title">
+          <%= deck.title %>
+        </div>
+
+        <div class="card_count">
+          <%= icon('stack') %>
+          <span><%= deck.cards.count %></span>
+        </div>
+  
+      <!-- <p>Number of attempts: <%= deck.games.count %></p> -->
+      </div>
+    </a>
+
+    <div class="deck_back ">
+      
 
     </div>
+
+
   <% end %>
 </div>
 
