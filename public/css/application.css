@@ -280,10 +280,7 @@ background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168)
 
 .signup .button input {
   height: 40px;
-<<<<<<< HEAD
   width: 102%;
-=======
-  width: 100%;
 }
 
 /* CSS Stats User Page ***************/
@@ -294,7 +291,6 @@ background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168)
   border-radius: 10px;
   width: 300px;
   padding: 15px;
->>>>>>> dacd9cbdcd38221cbddb3209bb2c0faae6f575dd
 
 }
 
