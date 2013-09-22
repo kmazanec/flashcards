@@ -5,4 +5,12 @@ class Game < ActiveRecord::Base
   has_many :cards, through: :deck
   has_many :responses
 
+  def last_card_id
+    1
+  end
+
+  def next_card_id
+    1
+  end
+
 end

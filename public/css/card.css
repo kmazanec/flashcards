@@ -1,0 +1,185 @@
+/* FLASHCARD STYLING =======================*/
+
+.card_container {
+  border: 1px solid #888;
+  box-shadow: 0 0 20px #aaa;
+  margin: 10px auto;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-out;
+  background: #022A46;
+  opacity: 0.8;
+  min-height: 180px;
+  min-width: 100px;
+  max-width: 600px;
+}
+
+.card {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.card_container .card h3 {
+  color: #FFF;
+  font-weight: lighter;
+}
+
+.card .submit {
+  min-width: 100px;
+  min-width: 200px;
+  width: 70%;
+  background-color: #2A6349;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+}
+
+.card .submit:hover {
+  background-color: #73F2B8;
+  color: #222;
+}
+
+.card .guess_input {
+  width: 70%;
+  text-align: center;
+  min-width: 200px;
+  height: 50px;
+  font-size: 2em;
+  border-radius: 10px;
+
+}
+
+/* CORRECT AND INCORRECT BANNERS ===================*/
+
+.banner {
+  opacity: 0.8;
+  max-height: 50px;
+  min-width: 100px;
+  max-width: 600px;
+  box-shadow: 0 0 20px #aaa;
+  margin: 10px auto;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-out;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.banner h3 {
+  font-weight: lighter;
+  margin: 0;
+}
+
+.incorrect {
+  background: #E31217;
+}
+
+
+.correct {
+  background: #B4F876;
+}
+
+.correct h3 {
+  color: #222;
+}
+
+/* COUNTER ============== */
+
+.card_counter {
+  margin: 10px auto;
+  min-width: 100px;
+  max-width: 600px;
+  text-align: right;
+}
+
+/* COMPLETE =============== */
+
+.game_complete {
+  border: 1px solid #888;
+  box-shadow: 0 0 20px #aaa;
+  margin: 20px auto;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-out;
+  background: #022A46;
+  opacity: 0.8;
+  min-height: 240px;
+  min-width: 100px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.game_complete h2 {
+  font-weight: lighter;
+  color: #FFF;
+}
+
+.game_complete p {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.game_complete .perc {
+  font-size: 22px;
+}
+
+.game_complete .submit {
+  min-width: 240px;
+  max-width: 200px;
+  min-height: 40px;
+  background-color: #2A6349;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+}
+
+.game_complete .submit:hover {
+  background-color: #73F2B8;
+  color: #222;
+}
+
+.game_complete .submit_container {
+  float: left;
+  margin: 10px 40px;
+}
+
+/* RESUME BUTTON */
+
+/* IN GAME NAV */
+
+.game_container .deck_title {
+  margin: 20px auto;
+  max-height: 60px;
+  min-width: 100px;
+  max-width: 600px;
+}
+
+.game_container .nav_button {
+  border: 1px solid #888;
+  min-width: 220px;
+  max-width: 200px;
+  min-height: 40px;
+  background-color: #2A6349;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+  opacity: 0.8;
+}
+
+.game_container .nav_button:hover {
+  background-color: #73F2B8;
+  color: #222;
+}
+
+.game_container .submit_container {
+  float: left;
+  margin: 10px 40px;
+}
+
+.game_nav_container {
+  margin: 20px auto;
+  min-height: 240px;
+  min-width: 100px;
+  max-width: 600px;
+  text-align: center;  
+}
+
+

@@ -1,12 +1,18 @@
 <div class="game_complete">
-  <h3>Deck Complete!</h3>
+  <h2>HONK! Deck Complete!</h2>
   <div>
-    <img src="">
+    <p>Correct answers: <%= last_game_correct_answers %> / <%= last_game_length %></p>
+    <p>Bad guesses: last_game_incorrect_answers</p>
+    <p class="perc"><%= last_game_score_percentage %>%</p>
   </div>
-  <form action="/" method="get">
-    <input type="submit" value="Back to Home">
-  </form>
-  <form action="/deck/<%= @last_deck_id %>">
-    <input type="submit" value="Replay this game">
-  </form>
+  <div class="submit_container">
+    <form action="/" method="get">
+      <input class="submit" type="submit" value="Back to Home">
+    </form>
+  </div>
+  <div class="submit_container">
+    <form action="/deck/<%= @last_deck_id %>">
+      <input class="submit" type="submit" value="Replay this game">
+    </form>
+  </div>
 </div>
