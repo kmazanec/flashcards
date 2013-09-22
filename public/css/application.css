@@ -132,13 +132,21 @@ background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
   z-index: 100;
   top: 0;
+  
+  background-image: linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, rgb(0,153,122) 100%);
+background-image: -o-linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, rgb(0,153,122) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, rgb(0,153,122) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, rgb(0,153,122) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, rgb(0,153,122) 100%);
+
+/*
 
   background-image: linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
   background-image: -o-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
   background-image: -moz-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
   background-image: -webkit-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
   background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168) 4%, rgb(104,174,212) 100%);
-}
+*/}
 
 .header div {
   padding: 0 20px;
@@ -353,19 +361,19 @@ background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 
 
 /* flip the pane when hovered */
 .flip-container:hover .flipper, .flip-container.hover .flipper {
-  -webkit-transform: rotateY(180deg);
+/*  -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+  transform: rotateY(180deg);*/
 }
 
 /* flip speed goes here */
 .flipper {
-  -webkit-transition: 0.6s;
+/*  -webkit-transition: 0.6s;
   -webkit-transform-style: preserve-3d;
   -moz-transition: 0.6s;
   -moz-transform-style: preserve-3d;
   transition: 0.6s;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d;*/
   position: relative;
 
 }
@@ -413,12 +421,14 @@ background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 
   background-image: -webkit-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
   background-image: -ms-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);*/
 
-  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(16,105,66,0.8)), to(rgba(13,68,52,0.8)));
+ /* background-image: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(16,105,66,0.8)), to(rgba(13,68,52,0.8)));
   background-image: -webkit-linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
   background-image: -moz-linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
   background-image: -o-linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
   background-image: linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
-
+*/
+    
+  background-color: rgba(0,84,67,0.9);
 
   box-shadow: 0px 0px 20px #aaa;
 
@@ -437,9 +447,66 @@ background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 
 .content .deck img {
   width: 150px;
   height: 150px;
-  float: right;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  mask-image: url(SVG/play2.svg);
+}
+
+.content .deck .overlay {
+  width: 150px;
+  height: 150px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.0);
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+}
+
+.content .deck .play svg {
+  /*fill: rgba(13,68,52,0.8);*/
+    fill: rgba(255,255,255,0.0);
+  height: 120px;
+  width: 120px;
+  transition: fill 0.5s;
+  -webkit-transition: fill 0.5s;
+}
+
+.content .deck .resume {
+  width: 150px;
+  height: 150px;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.content .deck .resume svg {
+  /*fill: rgba(13,68,52,0.8);*/
+    fill: rgba(255,255,255,1.0);
+  height: 120px;
+  width: 120px;
+  transition: fill 0.5s;
+  -webkit-transition: fill 0.5s;
+  margin: 14px 0 0 14px; 
+}
+
+.content .decks .resume_game .deck{
+  background-color: #FFCC00;
+}
+
+
+.content .deck:hover .overlay {
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+.content .deck:hover .play svg {
+  fill: rgba(255,255,255,0.8);
 }
 
 .content .deck .title {
@@ -454,11 +521,11 @@ background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 
 }
 
 .content .deck .card_count {
-  float: left;
   bottom: 0;
   margin: 0 0 2px 7px;
   position: absolute;
   display: block;
+  left: 0px;
 }
 
 .content .deck .card_count span {
@@ -476,6 +543,14 @@ background-image: -ms-linear-gradient(bottom, rgb(170,136,0) 0%, rgb(255,204,0) 
   margin-bottom: -3px;
 }
 
+
+.content .deck .play {
+  bottom: 15px;
+  position: absolute;
+  display: block;
+  right: 15px;
+}
+
 /* CSS Status Bar *************************************************************/
 
 .status_bar {
@@ -490,15 +565,3 @@ background-image: url('/images/status_y_g.svg');
 background-size: 30px;
 border-radius: inherit;
 }
-
-
-
-
-
-
-
-
-
-
-
-
