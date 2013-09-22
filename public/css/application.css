@@ -255,8 +255,8 @@ background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168)
   color: #fff;
   /*background-color: #A7D1C8;*/
   /*border: solid 1px #bbb;*/
-  background: none;
-  border: none;
+  background: gray;
+  border: solid 1px black;
   height: 28px;
 }
 
@@ -280,7 +280,7 @@ background-image: -ms-linear-gradient(bottom, rgb(30,52,117) 0%, rgb(40,102,168)
 
 .signup .button input {
   height: 40px;
-  width: 100%;
+  width: 102%;
 }
 
 /* CSS Stats User Page ***************/
