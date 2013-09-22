@@ -51,7 +51,7 @@ $(document).ready(function() {
     $.post('/signup', user_input, function(response){
       if (response == "success")
       {
-        alert(response);
+        // alert(response);
         window.location.href = '/';
       }
       else {
