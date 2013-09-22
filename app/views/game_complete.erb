@@ -1,8 +1,8 @@
 <div class="game_complete">
   <h2>HONK! Deck Complete!</h2>
   <div>
-    <p>Correct answers: <%= %> / <%= %></p>
-    <p class="perc">xx%</p>
+    <p>Correct answers: <%= last_game_correct_answers %> / <%= last_game_length %></p>
+    <p class="perc"><%= last_game_score_percentage %>%</p>
   </div>
   <div class="submit_container">
     <form action="/" method="get">
