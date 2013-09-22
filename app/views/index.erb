@@ -7,11 +7,13 @@
 <div class="three_fourth">
 
 <% if @game %>
-<div class="resume">
+<a class="resume_link_fix" href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">
+  <div class="resume">
 <!-- resume button / css attirbute active or hidden -->
-  <p><a href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">Resume Game</a></p>
+  <p>Resume Deck: <%= @game.deck.title %></p>
   <!-- conditional button with hyperlink to game in progress  -->
 </div>
+</a>
 <% end %>
 
 <!-- <div class="stats">
