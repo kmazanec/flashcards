@@ -74,6 +74,13 @@ $(document).ready(function() {
     }
   });
 
+  $('#guess').keyup(function(){
+    if ($('#embedded_answer').text().toLowerCase() == $('#guess').val().toLowerCase()) {
+      $('#correct_banner').show();
+    } else {
+      $('#correct_banner').hide();
+    }
+  });
 
   $('#submit_guess').submit(function(event){
     event.preventDefault();
