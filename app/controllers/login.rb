@@ -7,9 +7,12 @@ end
 post '/login' do
   user = User.find_by_email(params[:user][:email]).try(:authenticate, params[:user][:password])
   if user
+    puts "********* VALID LOGIN ***********"
     session[:user_id] = user.id 
   else
-    session[:error] = 'invalid login'    # should we use a session value instead? 
+    puts "********* BAD BAD BAD LOGIN ***********"
+    session[:error] = "Invalid email or Password"    # should we use a session value instead? 
+    puts session[:error]
     redirect '/'
   end
   redirect '/'
@@ -25,7 +28,7 @@ post '/signup' do
       session[:user_id] = user.id
       return "success"
     else
-      return "Invalid Data. Please try again. OK? Good lucks."
+      return "Invalid Data. Please try again. Quack."
     end
   else
     puts "THIS IS NOT AJAX"
