@@ -36,19 +36,14 @@ $(document).ready(function() {
       };
   });
 
-
- $('input').focus(function(event){
-    // $(this).css("background-color","#bbb");
-       $(this).val("");
+ // $('input').focus(function(event){
+ //    // $(this).css("background-color","#bbb");
+ //       $(this).val("");
     
-    if ( $(this).val() == "password" ) {
-      $(this).attr("type","password");
-    };
-  });
-
-
-
-
+ //    if ( $(this).val() == "password" ) {
+ //      $(this).attr("type","password");
+ //    };
+ //  });
 
   $('.signup form').submit(function(event){
     event.preventDefault();
@@ -65,10 +60,6 @@ $(document).ready(function() {
     });
   });
   
-
-
-
-
 
   $(window).scroll(function(){
         var scrollTop = 90;
