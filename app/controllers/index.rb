@@ -3,7 +3,7 @@ enable :sessions
 get '/' do
   # Look in app/views/index.erb
   # session[:user_id] = 1
-
+  
   if logged_in?
     @user = current_user
     @game = current_game

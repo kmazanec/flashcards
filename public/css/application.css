@@ -116,7 +116,8 @@ span {
   padding-top: 20px;
 }
 .header .form .icon svg {
-    fill: #C2DDF0;
+    /*fill: #C2DDF0;*/
+    fill: rgba(255,255,255,0.5);
     margin-right: -8px;
     margin-left: 10px;
     margin-bottom: -5px;
@@ -193,17 +194,22 @@ span {
   width: 350px;
   height: 150px;
   display: inline-table;
-  background-image: -webkit-gradient(linear, 0 100%, 0 0, color-stop(0.22, rgb(194,221,240)), to(rgb(140,172,194)));
-  background-image: -webkit-linear-gradient(bottom, rgb(194,221,240) 22%, rgb(140,172,194) 100%);
-  background-image: -moz-linear-gradient(bottom, rgb(194,221,240) 22%, rgb(140,172,194) 100%);
-  background-image: -o-linear-gradient(bottom, rgb(194,221,240) 22%, rgb(140,172,194) 100%);
-  background-image: linear-gradient(bottom, rgb(194,221,240) 22%, rgb(140,172,194) 100%);
+  float: left;
+  background-image: linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
   box-shadow: 0px 0px 20px #aaa;
-  margin-right: 20px;
+  margin: 0 20px 20px 0;
   border-radius: 10px;
 /*  border: 3px solid #2A475C;*/
   transition: box-shadow 0.2s ease-out;
   position: relative;
+
+}
+.content .deck a {
+  text-decoration: none; 
 }
 
 .content .deck:hover {
@@ -220,19 +226,19 @@ span {
 
 .content .deck .title {
   font-family: "Helvetica Neue";  
-  /*font-weight: lighter;*/
+  font-weight: lighter;
   text-transform: uppercase;
   text-align: center;
   width: 200px;
   font-size: 1.2em;
   margin-top: 10px;
-  color: #2A475C;
+  color: #C2DDF0;
 }
 
 .content .deck .card_count {
   float: left;
   bottom: 0;
-  margin: 0 0 0px 5px;
+  margin: 0 0 2px 7px;
   position: absolute;
   display: block;
 
@@ -240,17 +246,17 @@ span {
 
 .content .deck .card_count span {
   font-family: "Helvetica Neue";  
-  font-weight: lighter;
-  font-size: 1.5em;
-  color: #2A475C;
+  font-weight: 100;
+  font-size: 1.4em;
+  color: #C2DDF0;
   margin-left: 2px;
 }
 
 .content .deck .card_count svg {
-  fill: #2A475C;
+  fill: #C2DDF0;
   width: 22px;
   height: 22px;
-  margin-bottom: -2px;
+  margin-bottom: -3px;
 }
 
 
