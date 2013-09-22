@@ -55,6 +55,7 @@ end
 
 get '/deck/:deck_id/:card_id' do
   @card = Card.find(params[:card_id])
+  @game = Game.find(session[:game_id])
   erb :game
 end
 
@@ -80,6 +81,7 @@ post '/deck/:deck_id/:card_id' do
     if session[:card_id].nil?
       current_game.update(complete: true)
       completed_deck_id = current_game.deck.id
+      session[:last_game_id] = session[:game_id]
       session[:game_id] = nil
       session[:last_guess_correct] = nil
 

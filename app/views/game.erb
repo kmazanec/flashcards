@@ -1,17 +1,38 @@
 <div class="game_container">
-  <h2><%= current_game.deck.title %></h2>
-  <% if session[:last_guess_correct] %>
-  <div id="correct_banner">
-    <h3>Your last guess was correct!</h3>
+  <div class="deck_title">
+    <h2>Deck: <%= current_game.deck.title %></h2>
   </div>
+  <% if session[:last_guess_correct] %>
+    <div id="correct_banner" class="correct banner">
+      <h3>Goose! You're on it!</h3>
+    </div>
+  <% elsif session[:last_guess_correct] == false %>
+    <div id="incorrect_banner" class="incorrect banner">
+      <h3>Quack! That's not quite right...</h3>
+    </div>
   <% end %>
 
   <%= erb :_card, layout: false %>
 
-  <% if session[:last_guess_correct] == false %>
-  <div id="incorrect_banner">
-    <h3>Your last guess was wrong!</h3>
+  <div class="game_nav_container">
+    <div class="submit_container">
+      <% if prev_game_card_id %>
+      <form action="/deck/<%= @game.deck.id %>/<%= prev_game_card_id %>" method="get">
+        <input class="nav_button" type="submit" value="< Previous Card">
+      </form>
+      <% end %>
+    </div>
+    <div class="submit_container">
+      <% if next_game_card_id %>
+      <form action="/deck/<%= @game.deck.id %>/<%= next_game_card_id %>">
+        <input class="nav_button" type="submit" value="Skip this card >">
+      </form>
+      <% end %>
+    </div>
   </div>
-  <% end %>
+
+<!--   <div class="card_counter">
+    <h4>Card <%= %> of <%= %></h4>
+  </div> -->
 
 </div>
