@@ -16,8 +16,23 @@ post '/login' do
 end
 
 post '/signup' do
-  user = User.create(params[:user])
-  user.save
-  session[:user_id] = user.id
-  erb :index
+  session.clear
+  if request.xhr?
+    puts "THIS IS AJAX"
+    user = User.new(params[:user])
+    p u_save =  user.save
+    if u_save
+      session[:user_id] = user.id
+      return "success"
+    else
+      return "Invalid Data. Please try again. OK? Good lucks."
+    end
+  else
+    puts "THIS IS NOT AJAX"
+    user = User.new(params[:user])
+    user.save
+    session[:user_id] = user.id
+    erb :index
+  end
 end
+
