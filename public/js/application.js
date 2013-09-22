@@ -36,52 +36,63 @@ $(document).ready(function() {
       };
   });
 
-
- $('input').focus(function(event){
-    // $(this).css("background-color","#bbb");
-       $(this).val("");
+ // $('input').focus(function(event){
+ //    // $(this).css("background-color","#bbb");
+ //       $(this).val("");
     
-    if ( $(this).val() == "password" ) {
-      $(this).attr("type","password");
-    };
-  });
-
-
-
-
+ //    if ( $(this).val() == "password" ) {
+ //      $(this).attr("type","password");
+ //    };
+ //  });
 
   $('.signup form').submit(function(event){
     event.preventDefault();
     var user_input = $('.signup form').serialize();
-    $.post('/signup', user_input, function(response){ 
+    $.post('/signup', user_input, function(response){
       if (response == "success")
       {
         alert(response);
-        window.location.href = '/'; 
+        window.location.href = '/';
       }
       else {
-        alert(response);  
+        alert(response);
       }
     });
   });
   
 
-
-
-
-
   $(window).scroll(function(){
-        var scrollTop = 90;
-        if($(window).scrollTop() >= scrollTop){
-            $('.header').css({
-                position : 'fixed',
-                top : '0'
-            });
-        }
-        if($(window).scrollTop() < scrollTop){
-            $('.header').removeAttr('style');  
-        }
-    })
+    var scrollTop = 90;
+    if($(window).scrollTop() >= scrollTop){
+        $('.header').css({
+            position : 'fixed',
+            top : '0'
+        });
+    }
+    if($(window).scrollTop() < scrollTop){
+        $('.header').removeAttr('style');
+    }
+  });
+
+  $('#guess').keyup(function(){
+    if ($('#embedded_answer').text().toLowerCase() == $('#guess').val().toLowerCase()) {
+      $('#correct_banner').show();
+    } else {
+      $('#correct_banner').hide();
+    }
+  });
+
+  $('#submit_guess').submit(function(event){
+    event.preventDefault();
+
+    var guess = $('#submit_guess').serialize();
+
+    $.post($('#submit_guess').attr('action'), guess, function(response){
+      // alert("Well, this at least got here");
+      $('.game_container').replaceWith(response);
+    });
+
+  });
 
 
 });

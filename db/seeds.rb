@@ -1,7 +1,6 @@
 #encoding: utf-8
 
 class SeedDB
-
   def self.add_users(num)
     num.times do
       user = User.new( name: Faker::Name.name,
@@ -107,6 +106,32 @@ cards = [ {q: "Write this word PNEUMONO­ULTRA­MICRO­SCOPIC­SILICO­VOLCANO­
           {q: "Write this word ELECTRO­ENCEPHALO­GRAPHICALLY", a: "ELECTRO­ENCEPHALO­GRAPHICALLY" }]
 
 SeedDB.create_deck("Typing out the longest words", "/images/words.jpg", cards)
+
+cards = [ {q: "A shorthand property for all the animation properties below, except the animation-play-state property", a: "animation" },
+          {q: "Specifies a name for the @keyframes animation", a: "animation-name" },
+          {q: "Specifies how many seconds or milliseconds an animation takes to complete one cycle", a: "animation-duration" },
+          {q: "Specifies the speed curve of the animation", a: "animation-timing-function" },
+          {q: "Specifies when the animation will start", a: "animation-delay" }, ]
+
+SeedDB.create_deck("CSS Properties", "/images/css3.jpg", cards)
+
+cards = [ {q: "Represents a collection of metadata about the document, including links to, or definitions of, scripts and style sheets.", a: "head" },
+          {q: "Defines the title of the document, shown in a browser's title bar or on the page's tab. It can only contain text and any contained tags are not interpreted.", a: "title" },
+          {q: "Defines the base URL for relative URLs in the page.", a: "base" },
+          {q: "Used to link JavaScript and external CSS with the current HTML document", a: "link" },
+          {q: "Defines metadata that can't be defined using another HTML element.", a: "meta" }, ]
+
+SeedDB.create_deck("HTML5 Elements", "/images/html5.jpg", cards)
+
+
+# cards = [ {q: "", a: "" },
+#           {q: "", a: "" },
+#           {q: "", a: "" },
+#           {q: "", a: "" },
+#           {q: "", a: "" }, ]
+
+# SeedDB.create_deck("CSS Properties", "/images/xxx.jpg", cards)
+
 
 User.all.each do |user|
   num_plays = rand(4)+1
