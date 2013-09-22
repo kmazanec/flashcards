@@ -1,0 +1,10 @@
+.status_bar .current_position {
+height: inherit;
+background-color: red;
+}
+
+.status_bar {
+background-color: white;
+height: 20px;
+}
+

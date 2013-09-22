@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+
+
   $('#f-email').focus(function(event){
     $(this).animate({width: "170px"});
     // $(this).css("background-color","#bbb");
@@ -93,6 +96,5 @@ $(document).ready(function() {
     });
 
   });
-
-
+ 
 });
