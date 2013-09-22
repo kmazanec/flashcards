@@ -3,8 +3,7 @@
 </div>
 
 
-
-<div class="three_fourth">
+<!-- <div class="three_fourth"> -->
 
 <% if @game %>
 <div class="resume">
@@ -14,53 +13,66 @@
 </div>
 <% end %>
 
-<!-- <div class="stats">
-  <p>Deck stats</p>
-  <!-- erb _deck_stats -->
-<!-- </div>  -->
 
-<div class="decks">
-<!--   <p>Choose Your Deck!</p> -->
-  <% @decks = Deck.all %>
-  <% @decks.all.each do |deck| %>
-    <a href="/deck/<%= deck.id %>">
-      <div class="deck">
-      
-        <div>
-          <img id="deck" src="<%= deck.image_url %>">
-        </div>
 
-        <div class="title">
-          <%= deck.title %>
-        </div>
 
-        <div class="card_count">
-          <%= icon('stack') %>
-          <span><%= deck.cards.count %></span>
+  <div class="decks">
+  <!--   <p>Choose Your Deck!</p> -->
+    <% @decks = Deck.all %>
+    <% @decks.all.each do |deck| %>
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper">
+
+        <!-- <a href="/deck/<%= deck.id %>"> -->
+          <div class="deck front">
+
+            <div> <img id="deck" src="<%= deck.image_url %>"> </div>
+            <div class="title"><%= deck.title %></div>
+            <div class="card_count"><%= icon('stack') %>
+              <span><%= deck.cards.count %></span>
+            </div>
+          <!-- <p>Number of attempts: <%= deck.games.count %></p> -->
+          </div>
+        
+
+        <div class="deck back">
+
+          This game has been played 45 times.
+          32 times every question was answerd correctly.
+        
+
         </div>
-  
-      <!-- <p>Number of attempts: <%= deck.games.count %></p> -->
+   <!--      </a> -->
       </div>
-    </a>
-
-    <div class="deck_back ">
-      
-
     </div>
+    <% end %>
+  </div>
 
+<!-- </div> -->
 
-  <% end %>
-</div>
-
-</div>
-
-<div class="one_fourth float_right">
-  <span><%= erb :'icons/bars' %> User stats</span>
-  <ul>
-    <li>Players Total: <%= total_number_players %></li>
-    <li>Games Played: <%= total_games_played %></li>
-    <li>Correct Responses: <%= @user.number_of_correct_guesses %></li>
-    <li>Incorrect Responses: <%= @user.number_of_incorrect_guesses %></li> 
-  </ul>
-  <p>
+<div class="stats one_fourth float_right">
+  <span class="title"><%= erb :'icons/bars' %> User stats</span>
+  <table class="tb_stats">
+    <tr>
+      <td><%= icon('stack') %></td>
+      <td class="stat"><%= @user.games.count %></td>
+      <td class="title">Decks played</td>
+    </tr>
+    <tr>
+      <td><%= icon('clock') %></td>
+      <td class="stat">0<span>h </span>32<span>m </span>25<span>s</span></td>
+      <td class="title">Time played</td>
+    </tr>
+    <tr>
+      <td><%= icon('checkmark2') %></td>
+      <td class="stat"><%= @user.number_of_correct_guesses %></td>
+      <td class="title">Correct answers</td>
+    </tr>
+    <tr>
+      <td><%= icon('cancel-circle') %></td>
+      <td class="stat"><%= @user.number_of_incorrect_guesses %></td>
+      <td class="title">Incorrect answers</td>
+    </tr>
+  </table>
 </div>
