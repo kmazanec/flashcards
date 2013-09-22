@@ -1,11 +1,93 @@
 /* CSS Body ***************************/
 
-body {
-  background-image: url('duck.jpg');
-  background-repeat: no-repeat;
-  background-position : calc(75%) 0;
-
+html {
+  min-height: 100%;
+  background-image: linear-gradient(right top, rgb(255,255,255) 100%, rgb(124,197,239) 0%);
+  background-image: -o-linear-gradient(right top, rgb(255,255,255) 100%, rgb(124,197,239) 0%);
+  background-image: -moz-linear-gradient(right top, rgb(255,255,255) 100%, rgb(124,197,239) 0%);
+  background-image: -webkit-linear-gradient(right top, rgb(255,255,255) 100%, rgb(124,197,239) 0%);
+  background-image: -ms-linear-gradient(right top, rgb(255,255,255) 100%, rgb(124,197,239) 0%);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left bottom,
+    color-stop(1, rgb(255,255,255)),
+    color-stop(0, rgb(124,197,239))
+  );
 }
+
+
+
+body {
+  /*height: 100%;*/
+/*  background-image: url('/images/wave.svg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: 1;*/
+}
+
+
+
+
+/*
+body {
+  height: 100%;
+  
+  background:
+  background-image: url('/images/rubber_duck.svg') 30% no-repeat,
+  background-image: url('/images/wave.svg') 100% no-repeat;
+  
+/*
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;*/
+}
+*/
+
+
+body .wave, body .duck  {
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+body .wave img {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: -10;
+}
+
+body .duck img {
+  /*display: block;*/
+  position: fixed;
+  width: 35%;
+  margin: 0 0 3% 0;
+  bottom: 0;
+  right: 0;
+  z-index: -9;
+}
+
+
+/*
+body {
+  background-image: url('/images/rubber_duck.svg');
+  background-size: 30%;
+  background-position: bottom right;
+  background-attachment: fixed;
+  background-origin: ;
+  background-color: #C0F2DB;
+}
+*/
+
+
 
 svg {
   width: 50px;
@@ -56,6 +138,7 @@ span {
   min-height: 50px;
   width: 100%;
   display: inline-block;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
 
 .header div {
@@ -195,11 +278,19 @@ span {
   height: 150px;
   display: inline-table;
   float: left;
-  background-image: linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
+/*  background-image: linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
   background-image: -o-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
   background-image: -moz-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
   background-image: -webkit-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
-  background-image: -ms-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(2,42,70) 2%, rgb(42,71,92) 100%);*/
+
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(16,105,66,0.8)), to(rgba(13,68,52,0.8)));
+  background-image: -webkit-linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
+  background-image: linear-gradient(bottom, rgba(16,105,66,0.8) 0%, rgba(13,68,52,0.8) 100%);
+
+
   box-shadow: 0px 0px 20px #aaa;
   margin: 0 20px 20px 0;
   border-radius: 10px;
@@ -232,7 +323,7 @@ span {
   width: 200px;
   font-size: 1.2em;
   margin-top: 10px;
-  color: #C2DDF0;
+  color: #FFF;
 }
 
 .content .deck .card_count {
@@ -248,19 +339,19 @@ span {
   font-family: "Helvetica Neue";  
   font-weight: 100;
   font-size: 1.4em;
-  color: #C2DDF0;
+  color: #FFF;
   margin-left: 2px;
 }
 
 .content .deck .card_count svg {
-  fill: #C2DDF0;
+  fill: #FFF;
   width: 22px;
   height: 22px;
   margin-bottom: -3px;
 }
-
-
-
+/*
+#FCC200;
+*/
 
 /*CSS Unsorted*/
 
