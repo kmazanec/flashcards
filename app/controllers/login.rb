@@ -10,7 +10,7 @@ post '/login' do
   else
     ajax = :false
   end
-  user = User.find_by_email(params[:user][:email]).try(:authenticate, params[:user][:password])
+    user = User.find_by_email(params[:user][:email]).try(:authenticate, params[:user][:password])
   if user
     puts "********* VALID LOGIN ***********"
     session[:user_id] = user.id 
