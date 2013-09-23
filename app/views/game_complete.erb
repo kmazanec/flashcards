@@ -5,22 +5,48 @@
         <span>HONK! Deck Complete!</span>
       </div>
   </div>
-  <div>
-    <p>Correct answers: <%= last_game_correct_answers %> / <%= last_game_length %></p>
-    <p>Bad guesses: last_game_incorrect_answers</p>
-    <p class="perc"><%= last_game_score_percentage %>%</p>
+  <div class="temptest">
+
+
+    <div class="stats">
+      
+      <table class="tb_stats">
+    <tr>
+      <td><%= icon('stopwatch') %></td>
+      <td class="stat">0<span>h </span>1<span>m </span>25<span>s</span></td>
+      <td class="title">Time played</td>
+    </tr>
+    <tr>
+      <td><%= icon('checkmark2') %></td>
+      <td class="stat"><%= last_game_correct_answers %></td>
+      <td class="title">Correct answers</td>
+    </tr>
+    <tr>
+      <td><%= icon('cancel-circle') %></td>
+      <td class="stat"><%= last_game_incorrect_answers %></td>
+      <td class="title">Incorrect answers</td>
+    </tr>
+  </table>
+
+
+    </div>
+
+
+
   </div>
   
+
+  <div class="game_nav_container">
     <div class="submit_container">
       <a href="/">
-        <div class="nav_left icon float_left"><%= icon('home3') %>home</div>
+        <div class="nav_left icon float_left"><%= icon('home3') %></div>
       </a>
     </div>
 
 
     <div class="submit_container">
       <a href="/deck/<%= @last_deck_id %>">
-        <div class="nav_right icon float_right"><%= icon('loop3') %>replay</div>
+        <div class="nav_right icon float_right"><%= icon('loop3') %></div>
       </a>
     </div>
 
@@ -28,7 +54,7 @@
       <div class="current_position" style="width: 99%;">
       </div>
     </div>
-
+  </div>
 </div>
 
 
