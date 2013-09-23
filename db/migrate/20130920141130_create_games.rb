@@ -6,7 +6,7 @@ class CreateGames < ActiveRecord::Migration
       t.time :start_time
       t.time :end_time
       t.integer :current_card
-      t.boolean :complete
+      t.boolean :complete,  default: false
       t.timestamps
     end 
   end

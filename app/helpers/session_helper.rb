@@ -44,9 +44,18 @@ helpers do
     current_card_index = current_game.cards.index(current_game_card)
     return nil if current_card_index == 0
 
-    current_game.cards[current_card_index-1]
+    current_game.cards[current_card_index-1].id
   end
 
+  def games_not_started
+    started_decks = []
+    games = current_user.games.where("complete IS FALSE").each { |g| started_decks << g.deck }
+    decks = Deck.all - started_decks
+  end
+
+  def resume_game(deck_id)
+    current_user.game.find_by_deck_id(deck_id)
+  end
 
 
   

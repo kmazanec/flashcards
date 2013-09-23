@@ -1,9 +1,5 @@
-<link rel="stylesheet" href="/css/status_bar.css">
-
 <div class="game_container">
-  <div class="deck_title">
-    <h2>Deck: <%= current_game.deck.title %></h2>
-  </div>
+ 
   <%= erb :_card, layout: false %>
   
   <%# if session[:last_guess_correct] %>
@@ -18,28 +14,33 @@
 
 
   <div class="game_nav_container">
+
+    <div class="submit_container">
+      <% if prev_game_card_id %>
+        <a href="/deck/<%= @game.deck.id %>/<%= prev_game_card_id %>">
+          <div class="nav_left icon float_left"><%= icon('arrow-left2') %> </div>
+        </a>
+      <% end %>
+    </div>
+       
+    <div class="submit_container">
+      <% if next_game_card_id %>
+        <a href="/deck/<%= @game.deck.id %>/<%= next_game_card_id %>">
+          <div class="nav_right icon float_right"><%= icon('arrow-right2') %></div>
+        </a>
+      <% end %>
+    </div>
+
+    <div class="counter"> 
+      <span><%= current_card_position + 1 %> of <%= current_game.deck.cards.count %></span>
+    </div>
+
+    
     <div class="status_bar">
       <div class="current_position" style="width: <%= current_card_position.to_f / current_game.deck.cards.count * 100 %>%;">
       </div>
+    </div>
 
-    </div>
-              <div class="counter"> 
-          <p>Card <%= current_card_position %> of <%= current_game.deck.cards.count %></p>
-          </div>
-    <div class="submit_container">
-      <% if prev_game_card_id %>
-      <form action="/deck/<%= @game.deck.id %>/<%= prev_game_card_id %>" method="get">
-        <input class="nav_button" type="submit" value="< Previous Card">
-      </form>
-      <% end %>
-    </div>
-    <div class="submit_container">
-      <% if next_game_card_id %>
-      <form action="/deck/<%= @game.deck.id %>/<%= next_game_card_id %>">
-        <input class="nav_button" type="submit" value="Skip this card >">
-      </form>
-      <% end %>
-    </div>
   </div>
 
 <!--   <div class="card_counter">

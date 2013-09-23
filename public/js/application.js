@@ -45,20 +45,20 @@ $(document).ready(function() {
  //    };
  //  });
 
-  $('.signup form').submit(function(event){
-    event.preventDefault();
-    var user_input = $('.signup form').serialize();
-    $.post('/signup', user_input, function(response){
-      if (response == "success")
-      {
-        alert(response);
-        window.location.href = '/';
-      }
-      else {
-        alert(response);
-      }
-    });
-  });
+  // $('.signup form').submit(function(event){
+  //   event.preventDefault();
+  //   var user_input = $('.signup form').serialize();
+  //   $.post('/signup', user_input, function(response){
+  //     if (response == "success")
+  //     {
+  //       alert(response);
+  //       window.location.href = '/';
+  //     }
+  //     else {
+  //       alert(response);
+  //     }
+  //   });
+  // });
   
 
   // $(window).scroll(function(){
@@ -74,24 +74,24 @@ $(document).ready(function() {
   //   }
   // });
 
-  $('#guess').keyup(function(){
-    if ($('#embedded_answer').text().toLowerCase() == $('#guess').val().toLowerCase()) {
-      $('#correct_banner').show();
-    } else {
-      $('#correct_banner').hide();
-    }
-  });
+  // $('#guess').keyup(function(){
+  //   if ($('#embedded_answer').text().toLowerCase() == $('#guess').val().toLowerCase()) {
+  //     $('#correct_banner').show();
+  //   } else {
+  //     $('#correct_banner').hide();
+  //   }
+  // });
 
-  $('#submit_guess').submit(function(event){
-    event.preventDefault();
+  // $('#submit_guess').submit(function(event){
+  //   event.preventDefault();
 
-    var guess = $('#submit_guess').serialize();
+  //   var guess = $('#submit_guess').serialize();
 
-    $.post($('#submit_guess').attr('action'), guess, function(response){
-      // alert("Well, this at least got here");
-      $('.game_container').replaceWith(response);
-    });
+  //   $.post($('#submit_guess').attr('action'), guess, function(response){
+  //     // alert("Well, this at least got here");
+  //     $('.game_container').replaceWith(response);
+  //   });
 
-  });
+  // });
  
 });

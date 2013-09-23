@@ -8,59 +8,53 @@
 
   <div class="decks">
   
-  <% if @game %>
+  <% @games = @user.games.where("complete IS FALSE") %>
+
+  <% @games.each do |game| %>
+  
   <div class="flip-container resume_game">
-
+    <div class="flipper">
     <div class="deck front">
-
-      <div class="resume"><%= icon('forward2') %></div>
-
-        <a class="resume_link_fix" href="/deck/<%= current_game.deck_id %>/<%= current_game.current_card %>">
-          
-
-        <!-- resume button / css attirbute active or hidden -->
-          <p>Resume Deck: <%= @game.deck.title %></p>
-          <!-- conditional button with hyperlink to game in progress  -->
-            </a>
       
+      <a class="resume_link_fix" href="/deck/<%= game.deck_id %>">
+      <div> <img id="deck" src="<%= game.deck.image_url %>"></div>
+      <div class="overlay"><div class="resume"><%= icon('history') %></div></div>
+      </a>
+      
+      <div class="title"><%= game.deck.title %></div>
+      
+      <div class="spin"><%= icon('loop2') %></div>
+      <div class="card_count resume_text">
+        <span>Resume</span>
       </div>
+
+      </div>
+    </div>
     </div>
   <% end %>
 
   
 
   <!--   <p>Choose Your Deck!</p> -->
-    <% @decks = Deck.all %>
-    <% @decks.all.each do |deck| %>
+    <% @decks = games_not_started %>
+    <% #  @decks.delete_if { |deck| deck.id == @game.deck.id} if @game %>
+    <% @decks.each do |deck| %>
 
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
       <div class="flipper">
-        <div class="deck front">
+        <div class="deck front ">
           <a href="/deck/<%= deck.id %>">
             <div> <img id="deck" src="<%= deck.image_url %>"> </div>
-            <div class="overlay"><div class="play "><%= icon('play2') %></div></div>
-            
-            </a>
+            <div class="overlay"><div class="play "><%= icon('play2') %></div></div>  
+          </a>
 
-            <div class="title"><%= deck.title %></div>
-            
-            
-            <div class="card_count"><%= icon('stack') %>
-              <span><%= deck.cards.count %></span>
-            </div>
-
-           
-          <!-- <p>Number of attempts: <%= deck.games.count %></p> -->
+          <div class="title"><%= deck.title %></div>
+                
+          <div class="card_count"><%= icon('stack') %>
+            <span><%= deck.cards.count %></span>
           </div>
-        
 
-        <div class="deck back">
-
-          This game has been played 45 times.
-          32 times every question was answerd correctly.
-        
-
-        </div>
+          </div>
 
       </div>
     </div>

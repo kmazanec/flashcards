@@ -1,18 +1,35 @@
-<div class="game_complete">
-  <h2>HONK! Deck Complete!</h2>
+<div class="game_container">
+  <div class="card_container parent">
+    <div class="deck_title">
+      <div class="card_count"><%= icon('checkmark2') %>
+        <span>HONK! Deck Complete!</span>
+      </div>
+  </div>
   <div>
     <p>Correct answers: <%= last_game_correct_answers %> / <%= last_game_length %></p>
     <p>Bad guesses: last_game_incorrect_answers</p>
     <p class="perc"><%= last_game_score_percentage %>%</p>
   </div>
-  <div class="submit_container">
-    <form action="/" method="get">
-      <input class="submit" type="submit" value="Back to Home">
-    </form>
-  </div>
-  <div class="submit_container">
-    <form action="/deck/<%= @last_deck_id %>">
-      <input class="submit" type="submit" value="Replay this game">
-    </form>
-  </div>
+  
+    <div class="submit_container">
+      <a href="/">
+        <div class="nav_left icon float_left"><%= icon('home3') %>home</div>
+      </a>
+    </div>
+
+
+    <div class="submit_container">
+      <a href="/deck/<%= @last_deck_id %>">
+        <div class="nav_right icon float_right"><%= icon('loop3') %>replay</div>
+      </a>
+    </div>
+
+    <div class="status_bar">
+      <div class="current_position" style="width: 99%;">
+      </div>
+    </div>
+
 </div>
+
+
+
