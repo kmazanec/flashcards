@@ -47,7 +47,7 @@ $(document).ready(function() {
 
   $('.signup form').submit(function(event){
     event.preventDefault();
-    var user_input = $('.signup form').serialize();
+    var user_input = $(this).serialize();
     $.post('/signup', user_input, function(response){
       if (response == "success")
       {
@@ -60,6 +60,24 @@ $(document).ready(function() {
     });
   });
   
+  $('.header form').submit(function(event){
+    event.preventDefault();
+    var user_input=$(this).serialize();
+    $.post('/login', user_input, function(response){
+       if (response == "success")
+      {
+        // alert(response);
+        window.location.href = '/ddd';
+      }
+      else {
+        alert(response);
+      }
+    });
+  });
+
+
+
+
 
   // $(window).scroll(function(){
   //   var scrollTop = 90;

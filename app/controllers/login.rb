@@ -5,17 +5,27 @@ get '/logout' do
 end 
 
 post '/login' do
+  if request.xhr?
+    ajax = :true
+  else
+    ajax = :false
+  end
   user = User.find_by_email(params[:user][:email]).try(:authenticate, params[:user][:password])
   if user
     puts "********* VALID LOGIN ***********"
     session[:user_id] = user.id 
+    return "success" if ajax
   else
     puts "********* BAD BAD BAD LOGIN ***********"
-    session[:error] = "Invalid email or Password"    # should we use a session value instead? 
-    puts session[:error]
-    redirect '/'
+    if !ajax
+      session[:error] = "Invalid email or Password"    # should we use a session value instead? 
+      puts session[:error]
+      redirect '/'
+    else
+      return "Invalid email or password."
+    end
+      
   end
-  redirect '/'
 end
 
 post '/signup' do
