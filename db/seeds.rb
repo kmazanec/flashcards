@@ -29,10 +29,10 @@ class SeedDB
 
     game = Game.create( user_id: user_id, deck_id: deck_id )
 
-    cards = game.deck.cards
+    cards = game.deck.cards.all
 
     wrong_answer = [TRUE,TRUE,TRUE,FALSE]
-    rand_not_finish = [0,0,0,0,1,2,3]
+    rand_not_finish = [0,0,0,0,1,1,1]
 
     cards_to_not_answer = rand_not_finish.sample
 
@@ -41,15 +41,24 @@ class SeedDB
     end
 
     cards.each do |card|
+      current_c_id = nil
       answer  = card.answer
       correct = wrong_answer.sample
       answer = answer + "???" unless correct
-
-      Response.create( game_id: game.id,
+      puts Response.create( game_id: game.id,
                        guess: answer,
-                       correct: correct
+                       correct: correct,
+                       card_id: card.id
                       )
+      current_c_id = card.id
+      
+      if cards_to_not_answer > 0
+        game.current_card = current_c_id
+        game.save
+      end
     end
+
+    
 
   end
 
