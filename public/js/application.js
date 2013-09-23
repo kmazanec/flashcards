@@ -45,21 +45,45 @@ $(document).ready(function() {
  //    };
  //  });
 
-  // $('.signup form').submit(function(event){
-  //   event.preventDefault();
-  //   var user_input = $('.signup form').serialize();
-  //   $.post('/signup', user_input, function(response){
-  //     if (response == "success")
-  //     {
-  //       alert(response);
-  //       window.location.href = '/';
-  //     }
-  //     else {
-  //       alert(response);
-  //     }
-  //   });
-  // });
+
+  $('.signup form').submit(function(event){
+    event.preventDefault();
+    var user_input = $(this).serialize();
+    $.post('/signup', user_input, function(response){
+      if (response == "success")
+      {
+        // alert(response);
+        window.location.href = '/';
+      }
+      else {
+        alert(response);
+      }
+    });
+  });
+
   
+  $('.header form').submit(function(event){
+    event.preventDefault();
+    var user_input=$(this).serialize();
+    $.post('/login', user_input, function(response){
+       if (response == "success")
+      {
+        // alert(response);
+        window.location.href = '/';
+      }
+      else {
+        alert(response);
+        console.log($(this).val(''));
+        $('.header form .field #f-email').val('');
+        $('.header form .field #f-password').val('');
+
+      }
+    });
+  });
+
+
+
+
 
   // $(window).scroll(function(){
   //   var scrollTop = 90;
