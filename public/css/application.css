@@ -243,6 +243,12 @@ background-image: -ms-linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, 
 
 } 
 
+.header .form .login_error {
+  /* Eigil pls can you fix this style? */
+  position: absolute;
+  color: red;
+}
+
 /* CSS Form ***************************/
 
 .form  {
@@ -290,6 +296,8 @@ background-image: -ms-linear-gradient(bottom, rgb(0,28,19) 0%, rgb(0,84,67) 3%, 
   height: 40px;
   width: 102%;
 }
+
+
 
 /* CSS Stats User Page ***************/
 
