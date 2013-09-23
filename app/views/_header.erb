@@ -10,7 +10,7 @@
 <% if logged_in? %>
   <div class="form">
     <form action="/logout" method="POST">
-      <div class="user"><a class="link" href="/user"><%= current_user.name %></a></div>
+      <div class="user"><a class="link" href="/"><%= current_user.name %></a></div>
       <div class="button">
         <a href="/logout">
           <div class="icon">
