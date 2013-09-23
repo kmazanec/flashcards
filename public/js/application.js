@@ -67,10 +67,14 @@ $(document).ready(function() {
        if (response == "success")
       {
         // alert(response);
-        window.location.href = '/ddd';
+        window.location.href = '/';
       }
       else {
         alert(response);
+        console.log($(this).val(''));
+        $('.header form .field #f-email').val('');
+        $('.header form .field #f-password').val('');
+
       }
     });
   });
