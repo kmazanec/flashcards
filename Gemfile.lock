@@ -24,6 +24,8 @@ GEM
     daemons (1.1.9)
     diff-lcs (1.2.4)
     eventmachine (1.0.3)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
     i18n (0.6.5)
@@ -46,6 +48,8 @@ GEM
     rspec-mocks (2.14.3)
     shotgun (0.9)
       rack (>= 1.0)
+    shoulda-matchers (2.4.0)
+      activesupport (>= 3.0.0)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -73,11 +77,14 @@ DEPENDENCIES
   activerecord
   activesupport
   bcrypt-ruby (~> 3.0.0)
+  factory_girl
   faker
   pg
+  rack-test
   rake
   rspec
   shotgun
+  shoulda-matchers
   sinatra
   sinatra-contrib
   thin

@@ -117,6 +117,13 @@ namespace :db do
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
   end
+
+  namespace :test do
+    desc "Migrate test database"
+    task :prepare do
+      system "rake db:migrate RACK_ENV=test"
+    end
+  end
 end
 
 desc 'Start IRB with application environment loaded'
@@ -127,4 +134,4 @@ end
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:spec)
 
-task :default  => :specs
+task :default  => :spec
